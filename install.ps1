@@ -1,6 +1,6 @@
 #!/usr/bin/env pwsh
-# claude-blog installer for Windows
-# Installs the blog skill ecosystem to ~/.claude/skills/ and ~/.claude/agents/
+# gemini-blog installer for Windows
+# Installs the blog skill ecosystem to ~/.gemini/skills/ and ~/.gemini/agents/
 
 $ErrorActionPreference = "Stop"
 
@@ -12,15 +12,16 @@ function Main {
     Write-Color Cyan @"
 
    ╔══════════════════════════════════════╗
-   ║         claude-blog Installer        ║
-   ║  Blog Content Engine for Claude Code ║
+   ║         gemini-blog Installer        ║
+   ║  Blog Content Engine for Gemini CLI ║
    ╚══════════════════════════════════════╝
 
 "@
 
-    $SkillDir = Join-Path $env:USERPROFILE ".claude" "skills"
-    $AgentDir = Join-Path $env:USERPROFILE ".claude" "agents"
-    $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+    $SkillDir = Join-Path (Join-Path $env:USERPROFILE ".gemini") "skills"
+    $AgentDir = Join-Path (Join-Path $env:USERPROFILE ".gemini") "agents"
+    $ScriptDir = $PSScriptRoot
+    if ([string]::IsNullOrEmpty($ScriptDir)) { $ScriptDir = (Get-Location).Path }
 
     # Check prerequisites
     try {
@@ -136,7 +137,7 @@ function Main {
     Write-Color Cyan  "  /blog geo <file>           AI citation optimization audit"
     Write-Color Cyan  "  /blog audit [directory]    Full-site blog health assessment"
     Write-Color White ""
-    Write-Color Yellow "Restart Claude Code to activate the new skill."
+    Write-Color Yellow "Restart Gemini CLI to activate the new skill."
 }
 
 Main

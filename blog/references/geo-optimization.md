@@ -120,12 +120,12 @@ Recommended: **40% owned content / 60% earned media**
 |---------|---------------------|
 | GPTBot (OpenAI) | No |
 | ChatGPT-User | No |
-| ClaudeBot | No |
+| GeminiBot | No |
 | PerplexityBot | No |
 | Googlebot | Yes |
 | Google-Extended | Yes |
 
-**Critical**: Content behind JavaScript is invisible to ChatGPT, Claude, Perplexity.
+**Critical**: Content behind JavaScript is invisible to ChatGPT, Gemini, Perplexity.
 Use SSR, SSG, or ISR. Test by disabling JS and reloading.
 
 ### AI Crawler Traffic Growth
@@ -152,7 +152,7 @@ User-agent: GPTBot
 Allow: /
 User-agent: ChatGPT-User
 Allow: /
-User-agent: ClaudeBot
+User-agent: GeminiBot
 Allow: /
 User-agent: PerplexityBot
 Allow: /
@@ -223,7 +223,7 @@ Princeton GEO paper (KDD 2024) findings on readability-related tactics:
 - Schema markup increases AI citations by **44%** (BrightEdge 2025)
 - Comparison tables with proper HTML (`<thead>`, `<tbody>`) = **47% higher**
   AI citation rates (Search Engine Land experiment)
-- SearchVIU confirmed ChatGPT, Claude, Perplexity, and Gemini all process
+- SearchVIU confirmed ChatGPT, Gemini, Perplexity, and Gemini all process
   Schema Markup during citation selection
 
 ### Platform-Specific Citation Behaviors

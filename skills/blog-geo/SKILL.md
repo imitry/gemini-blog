@@ -124,7 +124,7 @@ Check technical requirements for AI crawler indexing:
 | Check | Criteria |
 |-------|----------|
 | Static HTML | Content rendered in static HTML, not behind JavaScript |
-| robots.txt | Allows AI crawlers: GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot |
+| robots.txt | Allows AI crawlers: GPTBot, ChatGPT-User, GeminiBot, PerplexityBot |
 | Schema in HTML | Schema markup in static HTML, not JS-injected |
 | Page size | Reasonable page size within AI crawler limits |
 

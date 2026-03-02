@@ -28,7 +28,7 @@ Do NOT use this template for:
 ```
 
 **Examples:**
-- "Claude Code Tutorial: Building a Blog Automation Pipeline in 2026"
+- "Gemini CLI Tutorial: Building a Blog Automation Pipeline in 2026"
 - "Next.js 15 Tutorial: Server Components API Route in 2026"
 - "Docker Compose Tutorial: Multi-Container Dev Environment in 2026"
 

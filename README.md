@@ -1,13 +1,13 @@
-# claude-blog
+# gemini-blog
 
-![Claude Blog — AI-Powered Blog Creation](assets/header.jpeg)
+![Gemini Blog — AI-Powered Blog Creation](assets/header.jpeg)
 
-![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blueviolet)
+![Gemini CLI Skill](https://img.shields.io/badge/Gemini_Code-Skill-blueviolet)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 ![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue)
 ![Sub-Skills](https://img.shields.io/badge/Sub--Skills-13-orange)
 
-**The most comprehensive blog creation skill for Claude Code.**
+**The most comprehensive blog creation skill for Gemini CLI.**
 
 Strategy, briefs, calendars, writing, optimization, schema, repurposing, and full-site audits — all from slash commands. Dual-optimized for Google rankings and AI citation platforms (ChatGPT, Perplexity, AI Overviews).
 
@@ -21,14 +21,14 @@ Strategy, briefs, calendars, writing, optimization, schema, repurposing, and ful
 One-command install (Unix/macOS):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/gemini-blog/main/install.sh | bash
 ```
 
 Or clone and install manually:
 
 ```bash
-git clone https://github.com/AgriciDaniel/claude-blog.git
-cd claude-blog
+git clone https://github.com/AgriciDaniel/gemini-blog.git
+cd gemini-blog
 chmod +x install.sh && ./install.sh
 ```
 
@@ -37,7 +37,7 @@ Windows (PowerShell):
 .\install.ps1
 ```
 
-Restart Claude Code after installation to activate.
+Restart Gemini CLI after installation to activate.
 
 ## Commands
 ![Blog write command demo](assets/blog-write-demo.gif)
@@ -92,7 +92,7 @@ Next.js/MDX, Astro, Hugo, Jekyll, WordPress, Ghost, 11ty, Gatsby, and static HTM
 ## Architecture
 
 ```
-claude-blog/
+gemini-blog/
 ├── blog/
 │   ├── SKILL.md                        # Main orchestrator (12 commands)
 │   ├── references/                     # 12 on-demand reference docs
@@ -166,7 +166,7 @@ claude-blog/
 
 ## Requirements
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI installed and configured
+- [Gemini CLI](https://docs.anthropic.com/en/docs/gemini-code) CLI installed and configured
 - Python 3.12+ (for `analyze_blog.py` quality scoring script)
 - Optional: `pip install -r requirements.txt` for advanced analysis (readability scoring, schema detection)
 
@@ -218,4 +218,4 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-Built by [AgriciDaniel](https://github.com/AgriciDaniel) with Claude Code.
+Built by [AgriciDaniel](https://github.com/AgriciDaniel) with Gemini CLI.

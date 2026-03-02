@@ -165,9 +165,9 @@ priority queue for optimization.
 The `analyze_blog.py` script provides automated metrics:
 
 ```bash
-python3 ~/.claude/skills/blog/scripts/analyze_blog.py post.md
-python3 ~/.claude/skills/blog/scripts/analyze_blog.py posts/ --batch
-python3 ~/.claude/skills/blog/scripts/analyze_blog.py post.md -o report.json
+python3 ~/.gemini/skills/blog/scripts/analyze_blog.py post.md
+python3 ~/.gemini/skills/blog/scripts/analyze_blog.py posts/ --batch
+python3 ~/.gemini/skills/blog/scripts/analyze_blog.py post.md -o report.json
 ```
 
 ### Related Commands
@@ -392,7 +392,7 @@ and FAQ items.
 ### Important
 
 Schema must appear in HTML source (server-rendered), not injected via
-client-side JavaScript. AI crawlers (GPTBot, ClaudeBot, PerplexityBot) do
+client-side JavaScript. AI crawlers (GPTBot, GeminiBot, PerplexityBot) do
 not execute JavaScript.
 
 ### Related Commands
@@ -451,7 +451,7 @@ visibility on AI platforms (ChatGPT, Perplexity, Google AI Overviews).
 - Source authority tier quality
 - Content extractability (50-150 word chunks)
 - JavaScript dependency (AI crawlers cannot execute JS)
-- `robots.txt` AI crawler access (GPTBot, ClaudeBot, PerplexityBot)
+- `robots.txt` AI crawler access (GPTBot, GeminiBot, PerplexityBot)
 - Off-site signal recommendations (YouTube, Reddit, reviews)
 
 ### Related Commands

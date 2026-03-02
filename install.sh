@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# claude-blog installer
-# Installs the blog skill ecosystem to ~/.claude/skills/ and ~/.claude/agents/
+# gemini-blog installer
+# Installs the blog skill ecosystem to ~/.gemini/skills/ and ~/.gemini/agents/
 #
 # One-command install:
-#   curl -sL https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.sh | bash
+#   curl -sL https://raw.githubusercontent.com/AgriciDaniel/gemini-blog/main/install.sh | bash
 
 main() {
-    local SKILL_DIR="${HOME}/.claude/skills"
-    local AGENT_DIR="${HOME}/.claude/agents"
+    local SKILL_DIR="${HOME}/.gemini/skills"
+    local AGENT_DIR="${HOME}/.gemini/agents"
     local SCRIPT_DIR
     local TEMP_DIR=""
 
     echo ""
     echo "  ╔══════════════════════════════════════╗"
-    echo "  ║         claude-blog Installer        ║"
-    echo "  ║  Blog Content Engine for Claude Code ║"
+    echo "  ║         gemini-blog Installer        ║"
+    echo "  ║  Blog Content Engine for Gemini CLI ║"
     echo "  ╚══════════════════════════════════════╝"
     echo ""
 
@@ -24,11 +24,11 @@ main() {
     if [ -f "${BASH_SOURCE[0]:-}" ] && [ -d "$(dirname "${BASH_SOURCE[0]}")/blog" ]; then
         SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
     else
-        echo "→ Cloning claude-blog..."
+        echo "→ Cloning gemini-blog..."
         TEMP_DIR="$(mktemp -d)"
         trap 'rm -rf "${TEMP_DIR}"' EXIT
-        git clone --depth 1 https://github.com/AgriciDaniel/claude-blog.git "${TEMP_DIR}/claude-blog" 2>/dev/null
-        SCRIPT_DIR="${TEMP_DIR}/claude-blog"
+        git clone --depth 1 https://github.com/AgriciDaniel/gemini-blog.git "${TEMP_DIR}/gemini-blog" 2>/dev/null
+        SCRIPT_DIR="${TEMP_DIR}/gemini-blog"
     fi
 
     # Check prerequisites
@@ -122,7 +122,7 @@ main() {
     echo "    /blog geo <file>           AI citation optimization audit"
     echo "    /blog audit [directory]    Full-site blog health assessment"
     echo ""
-    echo "  Restart Claude Code to activate the new skill."
+    echo "  Restart Gemini CLI to activate the new skill."
 }
 
 main "$@"

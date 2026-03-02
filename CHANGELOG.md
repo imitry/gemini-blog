@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Image density guidelines** by content type in visual-media.md
 
 ### Changed
-- claude-blog is now fully self-contained — no external skill dependencies required
+- gemini-blog is now fully self-contained — no external skill dependencies required
 - Integration section updated to list companion skills as optional
 - Installer scripts updated for 13 sub-skills
 

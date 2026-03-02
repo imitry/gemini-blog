@@ -1,6 +1,6 @@
 # Content Templates
 
-Reference guide for the 12 content type templates included with `claude-blog`.
+Reference guide for the 12 content type templates included with `gemini-blog`.
 Templates provide structural blueprints for different article types, ensuring
 consistent quality and optimization across all content.
 
@@ -386,7 +386,7 @@ Schema: FAQPage schema critical for this type
 
 ### Modifying an Existing Template
 
-1. Navigate to `~/.claude/skills/blog/templates/`
+1. Navigate to `~/.gemini/skills/blog/templates/`
 2. Open the template file you want to modify
 3. Adjust section structure, word counts, or guidance
 4. Changes take effect immediately (no restart needed)
@@ -395,8 +395,8 @@ Schema: FAQPage schema critical for this type
 
 1. Copy an existing template as a starting point:
    ```bash
-   cp ~/.claude/skills/blog/templates/how-to.md \
-      ~/.claude/skills/blog/templates/my-custom-type.md
+   cp ~/.gemini/skills/blog/templates/how-to.md \
+      ~/.gemini/skills/blog/templates/my-custom-type.md
    ```
 2. Define the section structure for your content type
 3. Add `ANSWER-FIRST:`, `VISUAL:`, and `INFO-GAIN:` markers

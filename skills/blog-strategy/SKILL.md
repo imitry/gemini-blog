@@ -272,7 +272,7 @@ Reference: `references/distribution-playbook.md` for detailed channel tactics an
 - Share of Voice in ChatGPT responses (manual tracking)
 - AI Overview citation rate (Google Search Console)
 - Perplexity mentions (manual tracking)
-- AI referral traffic (GA4: source contains chatgpt, perplexity, claude)
+- AI referral traffic (GA4: source contains chatgpt, perplexity, gemini)
 - Brand mention volume (branded search + web mentions)
 
 #### Content Quality

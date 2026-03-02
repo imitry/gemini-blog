@@ -22,10 +22,10 @@ User-agent: ChatGPT-User
 Allow: /
 
 # Anthropic
-User-agent: ClaudeBot
+User-agent: GeminiBot
 Allow: /
 
-User-agent: Claude-Web
+User-agent: Gemini-Web
 Allow: /
 
 User-agent: anthropic-ai
@@ -89,8 +89,8 @@ Sitemap: https://example.com/sitemap.xml
 | GPTBot | OpenAI | Training data & ChatGPT browsing | Yes |
 | OAI-SearchBot | OpenAI | SearchGPT results | Yes |
 | ChatGPT-User | OpenAI | ChatGPT user-initiated browsing | Yes |
-| ClaudeBot | Anthropic | Training data collection | Yes |
-| Claude-Web | Anthropic | Claude web search | Yes |
+| GeminiBot | Anthropic | Training data collection | Yes |
+| Gemini-Web | Anthropic | Gemini web search | Yes |
 | anthropic-ai | Anthropic | General crawling | Yes |
 | Google-Extended | Google | Gemini/AI training (separate from Googlebot) | Yes |
 | PerplexityBot | Perplexity | Answer engine indexing | Yes |
@@ -122,7 +122,7 @@ having correct robots.txt configuration.
 | Crawler | Default Status (New Domains) |
 |---------|------------------------------|
 | GPTBot | Blocked |
-| ClaudeBot | Blocked |
+| GeminiBot | Blocked |
 | PerplexityBot | Blocked |
 | CCBot | Blocked |
 | Google-Extended | Blocked |
@@ -138,7 +138,7 @@ After updating Cloudflare settings, verify access:
 curl -s -A "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.0; +https://openai.com/gptbot)" https://yourdomain.com/blog/test-post | head -50
 
 # Check for Cloudflare block page (403 or challenge page)
-curl -s -o /dev/null -w "%{http_code}" -A "Mozilla/5.0 (compatible; ClaudeBot/1.0)" https://yourdomain.com/
+curl -s -o /dev/null -w "%{http_code}" -A "Mozilla/5.0 (compatible; GeminiBot/1.0)" https://yourdomain.com/
 ```
 
 If you get a 403 or an HTML page with "Cloudflare" in it, the crawler is blocked.
@@ -219,8 +219,8 @@ JavaScript is invisible to all AI systems except Googlebot and AppleBot.
 | GPTBot | No | No |
 | ChatGPT-User | No | No |
 | OAI-SearchBot | No | No |
-| ClaudeBot | No | No |
-| Claude-Web | No | No |
+| GeminiBot | No | No |
+| Gemini-Web | No | No |
 | PerplexityBot | No | No |
 | Amazonbot | No | No |
 | YouBot | No | No |
@@ -286,9 +286,9 @@ curl -s https://yourdomain.com/blog/your-post | grep -c "id=\"app\""
 curl -s -H "User-Agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.0; +https://openai.com/gptbot)" \
   https://yourdomain.com/blog/your-post > /tmp/gptbot-view.html
 
-# Simulate ClaudeBot
-curl -s -H "User-Agent: Mozilla/5.0 (compatible; ClaudeBot/1.0; +https://claudebot.ai)" \
-  https://yourdomain.com/blog/your-post > /tmp/claudebot-view.html
+# Simulate GeminiBot
+curl -s -H "User-Agent: Mozilla/5.0 (compatible; GeminiBot/1.0; +https://geminibot.ai)" \
+  https://yourdomain.com/blog/your-post > /tmp/geminibot-view.html
 
 # Check if content exists
 wc -l /tmp/gptbot-view.html

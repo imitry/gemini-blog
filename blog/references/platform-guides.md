@@ -125,7 +125,7 @@ before inlining SVG. Use project components when they exist.
 
 ### generateStaticParams for SSG (Critical for AI Crawlers)
 
-AI crawlers (GPTBot, ClaudeBot, PerplexityBot) cannot execute JavaScript.
+AI crawlers (GPTBot, GeminiBot, PerplexityBot) cannot execute JavaScript.
 Pages must be statically generated or server-rendered. Never use client-only
 rendering for blog content.
 
@@ -1106,7 +1106,7 @@ Place in `<head>` for FAQPage:
 1. **Static or server-rendered HTML** -- AI crawlers cannot execute JavaScript
 2. **TTFB under 200ms** -- AI crawlers timeout at 3-5 seconds
 3. **Schema in HTML source** -- not injected via client-side JS
-4. **robots.txt allowing AI crawlers** -- GPTBot, ClaudeBot, PerplexityBot
+4. **robots.txt allowing AI crawlers** -- GPTBot, GeminiBot, PerplexityBot
 5. **Sitemap at /sitemap.xml** -- helps all crawlers discover content
 6. **OG meta tags** -- required for social sharing previews
 7. **dateModified in schema** -- critical for freshness signals

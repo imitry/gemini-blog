@@ -1,17 +1,17 @@
 # Installation Guide
 
-This guide covers all installation methods for `claude-blog`, a Claude Code skill
+This guide covers all installation methods for `gemini-blog`, a Gemini CLI skill
 ecosystem for blog content creation, optimization, and management.
 
 ## Prerequisites
 
 | Requirement | Version | Purpose |
 |-------------|---------|---------|
-| [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) | Latest | Runtime for all `/blog` commands |
+| [Gemini CLI CLI](https://docs.anthropic.com/en/docs/gemini-code) | Latest | Runtime for all `/blog` commands |
 | Python | 3.12+ | Quality analysis script (`analyze_blog.py`) |
 | pip | Latest | Python dependency management |
 
-Claude Code must be installed and configured before installing `claude-blog`.
+Gemini CLI must be installed and configured before installing `gemini-blog`.
 Python is only required for the `analyze_blog.py` quality scoring script; all
 other commands work without it.
 
@@ -22,25 +22,25 @@ other commands work without it.
 ### Linux / macOS
 
 ```bash
-curl -sL https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.sh | bash
+curl -sL https://raw.githubusercontent.com/AgriciDaniel/gemini-blog/main/install.sh | bash
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-irm https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/AgriciDaniel/gemini-blog/main/install.ps1 | iex
 ```
 
 Both installers automatically copy all skills, agents, references, templates,
-and scripts to the correct Claude Code configuration directories.
+and scripts to the correct Gemini CLI configuration directories.
 
 ---
 
 ## Standard Install (Git Clone)
 
 ```bash
-git clone https://github.com/AgriciDaniel/claude-blog.git
-cd claude-blog
+git clone https://github.com/AgriciDaniel/gemini-blog.git
+cd gemini-blog
 chmod +x install.sh
 ./install.sh
 ```
@@ -86,7 +86,7 @@ If you prefer not to run the installer, copy files to these paths manually.
 ### Directory Structure
 
 ```
-~/.claude/
+~/.gemini/
 ├── skills/
 │   ├── blog/
 │   │   ├── SKILL.md                          # Main orchestrator
@@ -123,31 +123,31 @@ If you prefer not to run the installer, copy files to these paths manually.
 
 ```bash
 # Create directories
-mkdir -p ~/.claude/skills/blog/{references,templates,scripts}
-mkdir -p ~/.claude/skills/blog-{write,rewrite,analyze,brief,calendar,strategy,outline,seo-check,schema,repurpose,geo,audit}
-mkdir -p ~/.claude/agents
+mkdir -p ~/.gemini/skills/blog/{references,templates,scripts}
+mkdir -p ~/.gemini/skills/blog-{write,rewrite,analyze,brief,calendar,strategy,outline,seo-check,schema,repurpose,geo,audit}
+mkdir -p ~/.gemini/agents
 
 # Main skill
-cp blog/SKILL.md ~/.claude/skills/blog/SKILL.md
+cp blog/SKILL.md ~/.gemini/skills/blog/SKILL.md
 
 # References
-cp blog/references/*.md ~/.claude/skills/blog/references/
+cp blog/references/*.md ~/.gemini/skills/blog/references/
 
 # Templates
-cp blog/templates/*.md ~/.claude/skills/blog/templates/
+cp blog/templates/*.md ~/.gemini/skills/blog/templates/
 
 # Sub-skills
 for d in skills/blog-*/; do
     name=$(basename "$d")
-    cp "$d/SKILL.md" ~/.claude/skills/$name/SKILL.md
+    cp "$d/SKILL.md" ~/.gemini/skills/$name/SKILL.md
 done
 
 # Agents
-cp agents/*.md ~/.claude/agents/
+cp agents/*.md ~/.gemini/agents/
 
 # Scripts
-cp scripts/analyze_blog.py ~/.claude/skills/blog/scripts/
-chmod +x ~/.claude/skills/blog/scripts/analyze_blog.py
+cp scripts/analyze_blog.py ~/.gemini/skills/blog/scripts/
+chmod +x ~/.gemini/skills/blog/scripts/analyze_blog.py
 ```
 
 ---
@@ -160,34 +160,34 @@ After installation, verify everything is in place:
 
 ```bash
 # Main skill
-ls ~/.claude/skills/blog/SKILL.md
+ls ~/.gemini/skills/blog/SKILL.md
 
 # Sub-skills (should list 12)
-ls ~/.claude/skills/blog-*/SKILL.md | wc -l
+ls ~/.gemini/skills/blog-*/SKILL.md | wc -l
 
 # Agents (should list 4)
-ls ~/.claude/agents/blog-*.md | wc -l
+ls ~/.gemini/agents/blog-*.md | wc -l
 
 # References (should list 5+)
-ls ~/.claude/skills/blog/references/*.md | wc -l
+ls ~/.gemini/skills/blog/references/*.md | wc -l
 
 # Python script
-ls ~/.claude/skills/blog/scripts/analyze_blog.py
+ls ~/.gemini/skills/blog/scripts/analyze_blog.py
 ```
 
-### 2. Restart Claude Code
+### 2. Restart Gemini CLI
 
-Close and reopen Claude Code (or restart the CLI) to load the new skills:
+Close and reopen Gemini CLI (or restart the CLI) to load the new skills:
 
 ```bash
 # If running in terminal, exit and relaunch
-claude
+gemini
 ```
 
 ### 3. Test a command
 
 ```bash
-# Inside Claude Code, run:
+# Inside Gemini CLI, run:
 /blog strategy "home automation"
 ```
 
@@ -197,7 +197,7 @@ begin gathering context about the niche.
 ### 4. Test the Python analysis script
 
 ```bash
-python3 ~/.claude/skills/blog/scripts/analyze_blog.py --help
+python3 ~/.gemini/skills/blog/scripts/analyze_blog.py --help
 ```
 
 Expected output:
@@ -224,13 +224,13 @@ options:
 Pull the latest changes and re-run the installer:
 
 ```bash
-cd claude-blog
+cd gemini-blog
 git pull
 ./install.sh
 ```
 
 The installer overwrites existing files, so updates are safe to run
-at any time. Restart Claude Code after updating.
+at any time. Restart Gemini CLI after updating.
 
 ---
 
@@ -239,23 +239,23 @@ at any time. Restart Claude Code after updating.
 ### Automated Uninstall (Unix)
 
 ```bash
-# From the claude-blog repository
+# From the gemini-blog repository
 chmod +x uninstall.sh
 ./uninstall.sh
 ```
 
 This removes:
 
-- `~/.claude/skills/blog/` (main skill, references, templates, scripts)
-- `~/.claude/skills/blog-*/` (all 12 sub-skills)
-- `~/.claude/agents/blog-*.md` (all 4 agents)
+- `~/.gemini/skills/blog/` (main skill, references, templates, scripts)
+- `~/.gemini/skills/blog-*/` (all 12 sub-skills)
+- `~/.gemini/agents/blog-*.md` (all 4 agents)
 
 ### Manual Uninstall
 
 ```bash
-rm -rf ~/.claude/skills/blog
-rm -rf ~/.claude/skills/blog-{write,rewrite,analyze,brief,calendar,strategy,outline,seo-check,schema,repurpose,geo,audit}
-rm -f ~/.claude/agents/blog-{researcher,writer,seo,reviewer}.md
+rm -rf ~/.gemini/skills/blog
+rm -rf ~/.gemini/skills/blog-{write,rewrite,analyze,brief,calendar,strategy,outline,seo-check,schema,repurpose,geo,audit}
+rm -f ~/.gemini/agents/blog-{researcher,writer,seo,reviewer}.md
 ```
 
 ### Clean Up Python Dependencies (Optional)
@@ -264,7 +264,7 @@ rm -f ~/.claude/agents/blog-{researcher,writer,seo,reviewer}.md
 pip uninstall textstat beautifulsoup4 lxml jsonschema
 ```
 
-Restart Claude Code after uninstalling to complete removal.
+Restart Gemini CLI after uninstalling to complete removal.
 
 ---
 
@@ -272,10 +272,10 @@ Restart Claude Code after uninstalling to complete removal.
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| `/blog` command not found | Claude Code not restarted | Close and reopen Claude Code |
+| `/blog` command not found | Gemini CLI not restarted | Close and reopen Gemini CLI |
 | `python3: command not found` | Python not installed or not in PATH | Install Python 3.12+ via your package manager |
 | `pip install` fails | Missing pip or wrong Python version | Run `python3 -m ensurepip --upgrade` |
 | Permission denied on `install.sh` | Script not executable | Run `chmod +x install.sh` |
-| Files not in `~/.claude/` | Wrong install location | Verify `$HOME` points to your home directory |
+| Files not in `~/.gemini/` | Wrong install location | Verify `$HOME` points to your home directory |
 
 For additional issues, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md).

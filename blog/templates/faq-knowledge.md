@@ -31,7 +31,7 @@ Do NOT use this template for:
 ```
 
 **Examples:**
-- "Claude Code: Frequently Asked Questions (2026)"
+- "Gemini CLI: Frequently Asked Questions (2026)"
 - "AI-Assisted Code Review: Frequently Asked Questions (2026)"
 - "Technical Blog SEO: Frequently Asked Questions (2026)"
 

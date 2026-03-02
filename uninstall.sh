@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# claude-blog uninstaller
+# gemini-blog uninstaller
 # Cleanly removes all blog skills, agents, templates, and scripts
 
 main() {
-    local SKILL_DIR="${HOME}/.claude/skills"
-    local AGENT_DIR="${HOME}/.claude/agents"
+    local SKILL_DIR="${HOME}/.gemini/skills"
+    local AGENT_DIR="${HOME}/.gemini/agents"
 
-    echo "=== Uninstalling claude-blog ==="
+    echo "=== Uninstalling gemini-blog ==="
     echo ""
 
     # Remove main skill (includes references, templates, scripts)
@@ -34,9 +34,9 @@ main() {
     done
 
     echo ""
-    echo "=== claude-blog uninstalled ==="
+    echo "=== gemini-blog uninstalled ==="
     echo ""
-    echo "Restart Claude Code to complete removal."
+    echo "Restart Gemini CLI to complete removal."
 }
 
 main "$@"

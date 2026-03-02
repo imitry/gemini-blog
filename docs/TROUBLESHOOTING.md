@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Common issues, their causes, and fixes for `claude-blog`. Issues are grouped
+Common issues, their causes, and fixes for `gemini-blog`. Issues are grouped
 by category and ordered from most to least common.
 
 ---
@@ -12,12 +12,12 @@ by category and ordered from most to least common.
 **Symptom**: Running `/blog write` produces no response or a "skill not found"
 error.
 
-**Cause**: Claude Code caches skill definitions at startup. New skills are not
+**Cause**: Gemini CLI caches skill definitions at startup. New skills are not
 detected until the CLI is restarted.
 
 **Fix**:
-1. Close Claude Code completely (exit the CLI or close the terminal)
-2. Reopen Claude Code
+1. Close Gemini CLI completely (exit the CLI or close the terminal)
+2. Reopen Gemini CLI
 3. Try `/blog write <topic>` again
 
 ### Python script errors
@@ -84,7 +84,7 @@ system."
 **Fix**:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/AgriciDaniel/gemini-blog/main/install.ps1 | iex
 ```
 
 ---
@@ -175,17 +175,17 @@ for the content type.
 
 1. **Templates not installed**: Verify the templates directory exists:
    ```bash
-   ls ~/.claude/skills/blog/templates/
+   ls ~/.gemini/skills/blog/templates/
    ```
    If empty or missing, re-run `./install.sh`.
 
 2. **Wrong install path**: Templates must be in
-   `~/.claude/skills/blog/templates/`, not in the repository's
+   `~/.gemini/skills/blog/templates/`, not in the repository's
    `blog/templates/` directory.
 
 3. **Template file corrupted**: Re-copy from the repository:
    ```bash
-   cp blog/templates/*.md ~/.claude/skills/blog/templates/
+   cp blog/templates/*.md ~/.gemini/skills/blog/templates/
    ```
 
 ### Wrong template selected
@@ -216,7 +216,7 @@ blog-writer, etc.), and instead tries to do everything inline.
 
 1. **Agent file not installed**: Check that agent files exist:
    ```bash
-   ls ~/.claude/agents/blog-*.md
+   ls ~/.gemini/agents/blog-*.md
    ```
    Expected: `blog-researcher.md`, `blog-writer.md`, `blog-seo.md`,
    `blog-reviewer.md`
@@ -224,12 +224,12 @@ blog-writer, etc.), and instead tries to do everything inline.
 2. **Missing `Task` in allowed-tools**: The sub-skill's YAML frontmatter must
    include `Task` in its `allowed-tools` list. Check the sub-skill file:
    ```bash
-   head -20 ~/.claude/skills/blog-write/SKILL.md
+   head -20 ~/.gemini/skills/blog-write/SKILL.md
    ```
    The `allowed-tools` section should include `Task`.
 
-3. **Claude Code version**: Agent spawning via `Task` requires a recent
-   version of Claude Code. Update to the latest version.
+3. **Gemini CLI version**: Agent spawning via `Task` requires a recent
+   version of Gemini CLI. Update to the latest version.
 
 ### Agent produces low-quality output
 
@@ -242,11 +242,11 @@ before spawning the agent. If the issue persists:
 
 1. Verify reference files exist:
    ```bash
-   ls ~/.claude/skills/blog/references/
+   ls ~/.gemini/skills/blog/references/
    ```
 2. Re-install references:
    ```bash
-   cp blog/references/*.md ~/.claude/skills/blog/references/
+   cp blog/references/*.md ~/.gemini/skills/blog/references/
    ```
 
 ---
@@ -260,7 +260,7 @@ even though the post has JSON-LD markup.
 
 **Causes**:
 
-1. **Schema injected via JavaScript**: AI crawlers (GPTBot, ClaudeBot,
+1. **Schema injected via JavaScript**: AI crawlers (GPTBot, GeminiBot,
    PerplexityBot) and the analysis script cannot see schema that is
    injected client-side via JavaScript. Schema must be present in the HTML
    source (server-rendered).
@@ -370,14 +370,14 @@ python3 analyze_blog.py posts/drafts/ --batch  # Only drafts
 
 If your issue is not listed here:
 
-1. **Check the version**: Ensure you have the latest `claude-blog` installed:
+1. **Check the version**: Ensure you have the latest `gemini-blog` installed:
    ```bash
-   cd claude-blog && git pull && ./install.sh
+   cd gemini-blog && git pull && ./install.sh
    ```
 
 2. **Verify file integrity**: Compare installed files with the repository:
    ```bash
-   diff ~/.claude/skills/blog/SKILL.md blog/SKILL.md
+   diff ~/.gemini/skills/blog/SKILL.md blog/SKILL.md
    ```
 
 3. **Reset installation**: Remove and reinstall:
@@ -385,4 +385,4 @@ If your issue is not listed here:
    ./uninstall.sh && ./install.sh
    ```
 
-4. **Open an issue**: https://github.com/AgriciDaniel/claude-blog/issues
+4. **Open an issue**: https://github.com/AgriciDaniel/gemini-blog/issues

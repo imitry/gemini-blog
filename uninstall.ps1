@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-# claude-blog uninstaller for Windows
+# gemini-blog uninstaller for Windows
 # Cleanly removes all blog skills, agents, templates, and scripts
 
 $ErrorActionPreference = "Stop"
@@ -9,10 +9,10 @@ function Write-Color($Color, $Text) {
 }
 
 function Main {
-    $SkillDir = Join-Path $env:USERPROFILE ".claude" "skills"
-    $AgentDir = Join-Path $env:USERPROFILE ".claude" "agents"
+    $SkillDir = Join-Path (Join-Path $env:USERPROFILE ".gemini") "skills"
+    $AgentDir = Join-Path (Join-Path $env:USERPROFILE ".gemini") "agents"
 
-    Write-Color Cyan "=== Uninstalling claude-blog ==="
+    Write-Color Cyan "=== Uninstalling gemini-blog ==="
     Write-Host ""
 
     # Remove main skill (includes references, templates, scripts)
@@ -47,9 +47,9 @@ function Main {
     }
 
     Write-Host ""
-    Write-Color Cyan "=== claude-blog uninstalled ==="
+    Write-Color Cyan "=== gemini-blog uninstalled ==="
     Write-Host ""
-    Write-Color Yellow "Restart Claude Code to complete removal."
+    Write-Color Yellow "Restart Gemini CLI to complete removal."
 }
 
 Main

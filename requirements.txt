@@ -1,4 +1,4 @@
-# claude-blog — Python Dependencies
+# gemini-blog — Python Dependencies
 # Bounded version pinning with security-conscious minimums
 # Last updated: February 18, 2026
 

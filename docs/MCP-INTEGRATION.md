@@ -1,10 +1,10 @@
 # MCP Integration Guide
 
 Optional Model Context Protocol (MCP) server integrations that extend
-`claude-blog` with live data from SEO platforms, analytics services, and
+`gemini-blog` with live data from SEO platforms, analytics services, and
 performance monitoring tools.
 
-**Important**: `claude-blog` works fully without any MCP servers. These
+**Important**: `gemini-blog` works fully without any MCP servers. These
 integrations are optional enhancements for teams that already use these
 platforms.
 
@@ -14,7 +14,7 @@ platforms.
 
 ```
                     +---------------------------+
-                    |      claude-blog          |
+                    |      gemini-blog          |
                     |    /blog commands          |
                     +------+----+----+----------+
                            |    |    |
@@ -90,7 +90,7 @@ Freshness Update Queue (Data-Driven)
 
 ### Configuration
 
-Add the GSC MCP server to your Claude Code settings (`~/.claude/settings.json`):
+Add the GSC MCP server to your Gemini CLI settings (`~/.gemini/settings.json`):
 
 ```json
 {
@@ -253,7 +253,7 @@ AI Crawler Readiness
 | CLS      | 0.08   | < 0.1   | Pass   |
 | JS-only? | No     | No      | Pass   |
 
-Your pages are accessible to AI crawlers (GPTBot, ClaudeBot, PerplexityBot).
+Your pages are accessible to AI crawlers (GPTBot, GeminiBot, PerplexityBot).
 ```
 
 ### Configuration
@@ -280,15 +280,15 @@ Your pages are accessible to AI crawlers (GPTBot, ClaudeBot, PerplexityBot).
 
 ## How to Configure MCP Servers
 
-MCP servers are configured in your Claude Code settings file. The location
+MCP servers are configured in your Gemini CLI settings file. The location
 depends on your setup:
 
 ### Settings File Location
 
 | Platform | Path |
 |----------|------|
-| Linux/macOS | `~/.claude/settings.json` |
-| Windows | `%USERPROFILE%\.claude\settings.json` |
+| Linux/macOS | `~/.gemini/settings.json` |
+| Windows | `%USERPROFILE%\.gemini\settings.json` |
 
 ### Adding an MCP Server
 
@@ -311,7 +311,7 @@ Edit `settings.json` to add MCP servers under the `mcpServers` key:
 ### Verifying MCP Connection
 
 After adding an MCP server:
-1. Restart Claude Code
+1. Restart Gemini CLI
 2. The MCP server should appear in available tools
 3. Test with a simple query related to the server's function
 
@@ -349,7 +349,7 @@ Then reference them in settings:
 
 ### Content Decay Detection (GSC + Blog Audit)
 
-Combine Google Search Console data with `claude-blog`'s quality scoring to
+Combine Google Search Console data with `gemini-blog`'s quality scoring to
 identify posts that need immediate attention:
 
 ```
@@ -399,7 +399,7 @@ Validate both content quality and technical readiness for AI crawlers:
 
 ## Roadmap
 
-MCP integrations are planned for Phase 3 of the `claude-blog` roadmap.
+MCP integrations are planned for Phase 3 of the `gemini-blog` roadmap.
 Current priorities:
 
 | Integration | Status | Priority |
@@ -413,5 +413,5 @@ Current priorities:
 | Contentful / Sanity CMS | Future | Low |
 
 Community contributions for MCP server implementations are welcome.
-See the [repository](https://github.com/AgriciDaniel/claude-blog) for
+See the [repository](https://github.com/AgriciDaniel/gemini-blog) for
 contribution guidelines.
