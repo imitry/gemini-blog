@@ -1,5 +1,6 @@
 {
   "name": "gemini-blog",
+  "version": "1.1.0",
   "description": "Full-lifecycle blog engine for rankings & AI citations. Optimized for Google 2026 Core Update and GEO.",
   "manifest": {
     "excludeTools": [

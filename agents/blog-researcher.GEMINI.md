@@ -5,13 +5,12 @@ description: >
   verifies sources against tier 1-3 quality standards, discovers Pixabay/Unsplash/Pexels
   images, and identifies competitive content gaps. Invoked for statistic research,
   image discovery, and competitive analysis tasks during blog writing workflows.
-context: fork
 tools:
-  - WebSearch
-  - WebFetch
-  - Read
-  - Grep
-  - Glob
+  - search_web
+  - read_url_content
+  - view_file
+  - grep_search
+  - list_dir
 ---
 
 You are a blog research specialist. Your job is to find accurate, current,

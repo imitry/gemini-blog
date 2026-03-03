@@ -16,8 +16,8 @@ allowed-tools:
 # Blog Schema -- JSON-LD Structured Data Generation
 
 Generates complete, validated JSON-LD schema markup for blog posts using the
-@graph pattern. Combines multiple schema types into a single script tag with
-stable @id references for entity linking.
+&#64;graph pattern. Combines multiple schema types into a single script tag with
+stable &#64;id references for entity linking.
 
 ## Workflow
 
@@ -41,36 +41,36 @@ Complete BlogPosting with all required and recommended properties:
 
 ```json
 {
-  "@type": "BlogPosting",
-  "@id": "{siteUrl}/blog/{slug}#article",
+  "&#64;type": "BlogPosting",
+  "&#64;id": "{siteUrl}/blog/{slug}#article",
   "headline": "Post title (max 110 chars)",
   "description": "Meta description (150-160 chars)",
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
-  "author": { "@id": "{siteUrl}/author/{author-slug}#person" },
-  "publisher": { "@id": "{siteUrl}#organization" },
-  "image": { "@id": "{siteUrl}/blog/{slug}#primaryimage" },
+  "author": { "&#64;id": "{siteUrl}/author/{author-slug}#person" },
+  "publisher": { "&#64;id": "{siteUrl}#organization" },
+  "image": { "&#64;id": "{siteUrl}/blog/{slug}#primaryimage" },
   "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{siteUrl}/blog/{slug}"
+    "&#64;type": "WebPage",
+    "&#64;id": "{siteUrl}/blog/{slug}"
   },
   "wordCount": 2400,
   "articleBody": "First 200 characters of content as excerpt..."
 }
 ```
 
-Required properties: @type, headline, datePublished, author, publisher, image.
+Required properties: &#64;type, headline, datePublished, author, publisher, image.
 Recommended properties: description, dateModified, mainEntityOfPage, wordCount,
 articleBody (excerpt).
 
 ### Step 3: Generate Person Schema
 
-Author schema with stable @id for cross-referencing:
+Author schema with stable &#64;id for cross-referencing:
 
 ```json
 {
-  "@type": "Person",
-  "@id": "{siteUrl}/author/{author-slug}#person",
+  "&#64;type": "Person",
+  "&#64;id": "{siteUrl}/author/{author-slug}#person",
   "name": "Author Name",
   "jobTitle": "Role or Title",
   "url": "{siteUrl}/author/{author-slug}",
@@ -84,7 +84,7 @@ Author schema with stable @id for cross-referencing:
 
 Optional properties (include when available):
 - `alumniOf` — Educational institution (Organization type)
-- `worksFor` — Employer (reference to Organization @id if same entity)
+- `worksFor` — Employer (reference to Organization &#64;id if same entity)
 
 ### Step 4: Generate Organization Schema
 
@@ -92,12 +92,12 @@ Blog's parent organization entity:
 
 ```json
 {
-  "@type": "Organization",
-  "@id": "{siteUrl}#organization",
+  "&#64;type": "Organization",
+  "&#64;id": "{siteUrl}#organization",
   "name": "Organization Name",
   "url": "{siteUrl}",
   "logo": {
-    "@type": "ImageObject",
+    "&#64;type": "ImageObject",
     "url": "{siteUrl}/logo.png",
     "width": 600,
     "height": 60
@@ -120,23 +120,23 @@ Navigation breadcrumb schema showing content hierarchy:
 
 ```json
 {
-  "@type": "BreadcrumbList",
-  "@id": "{siteUrl}/blog/{slug}#breadcrumb",
+  "&#64;type": "BreadcrumbList",
+  "&#64;id": "{siteUrl}/blog/{slug}#breadcrumb",
   "itemListElement": [
     {
-      "@type": "ListItem",
+      "&#64;type": "ListItem",
       "position": 1,
       "name": "Home",
       "item": "{siteUrl}"
     },
     {
-      "@type": "ListItem",
+      "&#64;type": "ListItem",
       "position": 2,
       "name": "Category Name",
       "item": "{siteUrl}/blog/category/{category-slug}"
     },
     {
-      "@type": "ListItem",
+      "&#64;type": "ListItem",
       "position": 3,
       "name": "Post Title",
       "item": "{siteUrl}/blog/{slug}"
@@ -154,14 +154,14 @@ Extract Q&A pairs from the blog post's FAQ section:
 
 ```json
 {
-  "@type": "FAQPage",
-  "@id": "{siteUrl}/blog/{slug}#faq",
+  "&#64;type": "FAQPage",
+  "&#64;id": "{siteUrl}/blog/{slug}#faq",
   "mainEntity": [
     {
-      "@type": "Question",
+      "&#64;type": "Question",
       "name": "What is the question?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "&#64;type": "Answer",
         "text": "The complete answer text (40-60 words with statistic)."
       }
     }
@@ -182,8 +182,8 @@ Cover image schema for the post's primary image:
 
 ```json
 {
-  "@type": "ImageObject",
-  "@id": "{siteUrl}/blog/{slug}#primaryimage",
+  "&#64;type": "ImageObject",
+  "&#64;id": "{siteUrl}/blog/{slug}#primaryimage",
   "url": "https://cdn.pixabay.com/photo/.../image.jpg",
   "width": 1200,
   "height": 630,
@@ -210,7 +210,7 @@ Check for deprecated schema types and apply validation rules:
 - **Q&A** — Deprecated January 2026 (distinct from FAQPage)
 
 **Validation checks:**
-1. All @id references resolve to entities within the @graph
+1. All &#64;id references resolve to entities within the &#64;graph
 2. dateModified is equal to or after datePublished
 3. headline does not exceed 110 characters
 4. description is between 50-160 characters
@@ -226,28 +226,28 @@ ImageObject) to maximize both search engine understanding and AI extraction.
 
 ### Step 9: Output
 
-Combine all schemas into a single `<script>` tag using the @graph pattern:
+Combine all schemas into a single `<script>` tag using the &#64;graph pattern:
 
 ```html
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    { "@type": "BlogPosting", ... },
-    { "@type": "Person", ... },
-    { "@type": "Organization", ... },
-    { "@type": "BreadcrumbList", ... },
-    { "@type": "FAQPage", ... },
-    { "@type": "ImageObject", ... }
+  "&#64;context": "https://schema.org",
+  "&#64;graph": [
+    { "&#64;type": "BlogPosting", ... },
+    { "&#64;type": "Person", ... },
+    { "&#64;type": "Organization", ... },
+    { "&#64;type": "BreadcrumbList", ... },
+    { "&#64;type": "FAQPage", ... },
+    { "&#64;type": "ImageObject", ... }
   ]
 }
 </script>
 ```
 
-**@graph pattern benefits:**
+**&#64;graph pattern benefits:**
 - Single script tag instead of multiple — cleaner HTML
-- Entity linking via stable @id references (e.g., author references Person by @id)
-- Google and AI systems parse @graph arrays correctly
+- Entity linking via stable &#64;id references (e.g., author references Person by &#64;id)
+- Google and AI systems parse &#64;graph arrays correctly
 - Easier to maintain and update as a single block
 
 **Output options:**
