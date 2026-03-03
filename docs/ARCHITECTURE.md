@@ -160,3 +160,16 @@ gemini-blog/
     ├── blog-writer.GEMINI.md            # Subagent
     └── ... (2 more)
 ```
+
+---
+
+## Technical Considerations: Gemini CLI
+
+When developing or modifying agents within this extension, you **must use the strict Gemini CLI tool naming conventions** in the `tools` array of the agent's YAML frontmatter.
+
+Tools must be specified in the correct `snake_case` format corresponding to the Gemini CLI built-ins. Some of the major mappings include:
+- **File System:** `read_file`, `write_file`, `replace`, `list_directory`, `glob`
+- **Search & Execution:** `grep_search` (not `search_file_content`), `run_shell_command`
+- **Web & URLs:** `web_fetch`, `google_web_search`
+
+Failing to use these canonical names will result in "Invalid tool name" validation errors when the Gemini CLI tries to load the agent.

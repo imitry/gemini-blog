@@ -49,3 +49,10 @@ firebase-debug.log
 
 # Working documents
 definitive-resesarch-blueprint-for-claude-blog.md
+
+# Obsolete / Internal scripts
+rename.py
+install.sh
+install.ps1
+uninstall.sh
+uninstall.ps1

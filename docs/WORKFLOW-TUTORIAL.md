@@ -64,5 +64,25 @@ The engine uses a combination of an Orchestrator (`blog/GEMINI.md`), 12 specific
 **Commands to use:** `/blog repurpose <file>`
 
 * **What happens:** The finished article is passed back to the writer/marketer tools.
-* **The output:** The content is chopped up into Twitter threads, LinkedIn thought-leadership posts, Reddit submissions, or YouTube scriptsвЂ”completing the lifecycle and driving traffic back to your blog.
+* **The output:** The content is chopped up into Twitter threads, LinkedIn thought-leadership posts, Reddit submissions, or YouTube scripts—completing the lifecycle and driving traffic back to your blog.
 
+---
+
+## Using the Extension in Gemini CLI
+
+To install and run the `gemini-blog` extension:
+
+1. **Install the Extension:**
+   Navigate to the project root and run the installation command. When prompted, confirm that you trust the folder:
+   ```bash
+   cd gemini-blog
+   gemini extensions install .
+   ```
+   *(Note: You can verify the successful loading of all skills and agents via `gemini extensions list`, which should show the 4 agents without any "Invalid tool name" errors).*
+
+2. **Execute a Workflow in the CLI:**
+   You can run the engine interactively or pass commands via a standard shell. For example, you can safely pipe a request to the analysis skill using YOLO (auto-approve) mode and SGE standard outputs:
+   ```bash
+   echo "analyze the blog post at ./sample-post.md using the blog-analyze skill and give me the quality score" | gemini -y
+   ```
+   The engine will spin up the necessary components, apply the quality rubric (including SGE optimization logic), and return a highly detailed grading report representing true end-to-end task fulfillment.

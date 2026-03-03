@@ -1,13 +1,12 @@
 ﻿# Installation Guide
 
-This guide covers all installation methods for `gemini-blog`, a Gemini CLI skill
-ecosystem for blog content creation, optimization, and management.
+This guide covers the installation methods for `gemini-blog`, a native Gemini CLI extension ecosystem for blog content creation, optimization, and management.
 
 ## Prerequisites
 
 | Requirement | Version | Purpose |
 |-------------|---------|---------|
-| [Gemini CLI CLI](https://geminicli.com/docs/) | Latest | Runtime for all `/blog` commands |
+| [Gemini CLI](https://geminicli.com/docs/) | v0.31.0+ | Runtime for all `/blog` commands |
 | Python | 3.12+ | Quality analysis script (`analyze_blog.py`) |
 | pip | Latest | Python dependency management |
 
@@ -17,38 +16,49 @@ other commands work without it.
 
 ---
 
-## Quick Install (One Command)
+## Installing the Extension
 
-### Linux / macOS
+Because `gemini-blog` uses standard Gemini CLI extension architecture, installation is extremely simple. The extension uses `gemini-extension.json` and loads context from `GEMINI.md`.
 
-```bash
-curl -sL https://raw.githubusercontent.com/imitry/gemini-blog/main/install.sh | bash
-```
+### 1. Clone the Repository
 
-### Windows (PowerShell)
-
-```powershell
-irm https://raw.githubusercontent.com/imitry/gemini-blog/main/install.ps1 | iex
-```
-
-Both installers automatically copy all skills, agents, references, templates,
-and scripts to the correct Gemini CLI configuration directories.
-
----
-
-## Standard Install (Git Clone)
+First, clone the repository to a local directory:
 
 ```bash
 git clone https://github.com/imitry/gemini-blog.git
 cd gemini-blog
-chmod +x install.sh
-./install.sh
 ```
 
-### Install Python Dependencies
+### 2. Install via Gemini CLI
 
-The installer on Linux/macOS does not auto-install Python packages. Run this
-after the main install:
+Use the built-in Gemini extension manager to install the extension from the local directory:
+
+```bash
+gemini extensions install .
+```
+
+*Note: The CLI will prompt you asking if you trust the local folder. Type `y` or `yes` to proceed.*
+
+If you want to skip the prompt automatically (e.g. in CI environments):
+```bash
+echo "y" | gemini extensions install .
+```
+
+### 3. Verify Installation
+
+You can confirm the installation was successful and all agents loaded without errors by running:
+
+```bash
+gemini extensions list
+```
+
+You should see `gemini-blog` listed as enabled. There should be no "Invalid tool name" errors if the agents are correctly formatted.
+
+---
+
+## Install Python Dependencies
+
+The Python analysis script requires some external libraries. Run this after the main install:
 
 ```bash
 pip install -r requirements.txt
@@ -63,199 +73,28 @@ pip install -r requirements.txt
 | lxml | >=5.0.0 | XML/HTML parser backend |
 | jsonschema | >=4.20.0 | JSON-LD schema validation |
 
-**Optional dependencies** (unlock advanced features in `analyze_blog.py`):
-
-```bash
-pip install spacy                  # NER, advanced NLP
-python -m spacy download en_core_web_sm
-pip install sentence-transformers  # Semantic similarity / duplicate detection
-pip install scikit-learn           # Topic cannibalization clustering
-pip install language-tool-python   # Grammar and style checking (requires Java)
-```
-
-The analysis script works without optional dependencies by falling back to
-basic mode automatically.
-
----
-
-## Manual Install (File by File)
-
-If you prefer not to run the installer, copy files to these paths manually.
-`~` refers to your home directory (`$HOME` on Unix, `%USERPROFILE%` on Windows).
-
-### Directory Structure
-
-```
-~/.gemini/
-в”њв”Ђв”Ђ skills/
-в”‚   в”њв”Ђв”Ђ blog/
-в”‚   в”‚   в”њв”Ђв”Ђ GEMINI.md                          # Main orchestrator
-в”‚   в”‚   в”њв”Ђв”Ђ references/
-в”‚   в”‚   в”‚   в”њв”Ђв”Ђ content-rules.md
-в”‚   в”‚   в”‚   в”њв”Ђв”Ђ geo-optimization.md
-в”‚   в”‚   в”‚   в”њв”Ђв”Ђ google-landscape-2026.md
-в”‚   в”‚   в”‚   в”њв”Ђв”Ђ quality-scoring.md
-в”‚   в”‚   в”‚   в””в”Ђв”Ђ visual-media.md
-в”‚   в”‚   в”њв”Ђв”Ђ templates/                        # 12 content type templates
-в”‚   в”‚   в”‚   в””в”Ђв”Ђ *.md
-в”‚   в”‚   в””в”Ђв”Ђ scripts/
-в”‚   в”‚       в””в”Ђв”Ђ analyze_blog.py
-в”‚   в”њв”Ђв”Ђ blog-write/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-rewrite/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-analyze/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-brief/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-calendar/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-strategy/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-outline/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-seo-check/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-schema/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-repurpose/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-geo/GEMINI.md
-в”‚   в””в”Ђв”Ђ blog-audit/GEMINI.md
-в””в”Ђв”Ђ agents/
-    в”њв”Ђв”Ђ blog-researcher.md
-    в”њв”Ђв”Ђ blog-writer.md
-    в”њв”Ђв”Ђ blog-seo.md
-    в””в”Ђв”Ђ blog-reviewer.md
-```
-
-### Copy Commands (Unix)
-
-```bash
-# Create directories
-mkdir -p ~/.gemini/skills/blog/{references,templates,scripts}
-mkdir -p ~/.gemini/skills/blog-{write,rewrite,analyze,brief,calendar,strategy,outline,seo-check,schema,repurpose,geo,audit}
-mkdir -p ~/.gemini/agents
-
-# Main skill
-cp blog/GEMINI.md ~/.gemini/skills/blog/GEMINI.md
-
-# References
-cp blog/references/*.md ~/.gemini/skills/blog/references/
-
-# Templates
-cp blog/templates/*.md ~/.gemini/skills/blog/templates/
-
-# Sub-skills
-for d in skills/blog-*/; do
-    name=$(basename "$d")
-    cp "$d/GEMINI.md" ~/.gemini/skills/$name/GEMINI.md
-done
-
-# Agents
-cp agents/*.md ~/.gemini/agents/
-
-# Scripts
-cp scripts/analyze_blog.py ~/.gemini/skills/blog/scripts/
-chmod +x ~/.gemini/skills/blog/scripts/analyze_blog.py
-```
-
----
-
-## Verification
-
-After installation, verify everything is in place:
-
-### 1. Check installed files
-
-```bash
-# Main skill
-ls ~/.gemini/skills/blog/GEMINI.md
-
-# Sub-skills (should list 12)
-ls ~/.gemini/skills/blog-*/GEMINI.md | wc -l
-
-# Agents (should list 4)
-ls ~/.gemini/agents/blog-*.md | wc -l
-
-# References (should list 5+)
-ls ~/.gemini/skills/blog/references/*.md | wc -l
-
-# Python script
-ls ~/.gemini/skills/blog/scripts/analyze_blog.py
-```
-
-### 2. Restart Gemini CLI
-
-Close and reopen Gemini CLI (or restart the CLI) to load the new skills:
-
-```bash
-# If running in terminal, exit and relaunch
-gemini
-```
-
-### 3. Test a command
-
-```bash
-# Inside Gemini CLI, run:
-/blog strategy "home automation"
-```
-
-You should see the orchestrator route to the `blog-strategy` sub-skill and
-begin gathering context about the niche.
-
-### 4. Test the Python analysis script
-
-```bash
-python3 ~/.gemini/skills/blog/scripts/analyze_blog.py --help
-```
-
-Expected output:
-
-```
-usage: analyze_blog.py [-h] [--output OUTPUT] [--batch] input
-
-Analyze blog post quality
-
-positional arguments:
-  input                 Blog file path or directory (with --batch)
-
-options:
-  -h, --help            show this help message and exit
-  --output OUTPUT, -o OUTPUT
-                        Output file path (JSON)
-  --batch               Analyze all blog files in directory
-```
+The analysis script works without optional dependencies by falling back to basic mode automatically.
 
 ---
 
 ## Updating
 
-Pull the latest changes and re-run the installer:
+To update to the latest version of the extension:
 
 ```bash
-cd gemini-blog
+cd path/to/gemini-blog
 git pull
-./install.sh
+gemini extensions install .
 ```
-
-The installer overwrites existing files, so updates are safe to run
-at any time. Restart Gemini CLI after updating.
 
 ---
 
-## Uninstall
+## Uninstalling
 
-### Automated Uninstall (Unix)
-
-```bash
-# From the gemini-blog repository
-chmod +x uninstall.sh
-./uninstall.sh
-```
-
-This removes:
-
-- `~/.gemini/skills/blog/` (main skill, references, templates, scripts)
-- `~/.gemini/skills/blog-*/` (all 12 sub-skills)
-- `~/.gemini/agents/blog-*.md` (all 4 agents)
-
-### Manual Uninstall
+To remove the extension from Gemini CLI:
 
 ```bash
-rm -rf ~/.gemini/skills/blog
-rm -rf ~/.gemini/skills/blog-{write,rewrite,analyze,brief,calendar,strategy,outline,seo-check,schema,repurpose,geo,audit}
-rm -f ~/.gemini/agents/blog-{researcher,writer,seo,reviewer}.md
+gemini extensions uninstall gemini-blog
 ```
 
 ### Clean Up Python Dependencies (Optional)
@@ -264,19 +103,13 @@ rm -f ~/.gemini/agents/blog-{researcher,writer,seo,reviewer}.md
 pip uninstall textstat beautifulsoup4 lxml jsonschema
 ```
 
-Restart Gemini CLI after uninstalling to complete removal.
-
 ---
 
 ## Troubleshooting Installation
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| `/blog` command not found | Gemini CLI not restarted | Close and reopen Gemini CLI |
+| `Invalid tool name` errors | Agent files have outdated tool names | Ensure `agents/*.GEMINI.md` use canonical snake_case tool names (`read_file`, `write_file`, `replace`, etc.) |
+| `gemini: command not found` | Gemini CLI is not installed | Install the Gemini CLI globally via npm/yarn |
 | `python3: command not found` | Python not installed or not in PATH | Install Python 3.12+ via your package manager |
 | `pip install` fails | Missing pip or wrong Python version | Run `python3 -m ensurepip --upgrade` |
-| Permission denied on `install.sh` | Script not executable | Run `chmod +x install.sh` |
-| Files not in `~/.gemini/` | Wrong install location | Verify `$HOME` points to your home directory |
-
-For additional issues, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
-
