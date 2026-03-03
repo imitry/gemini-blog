@@ -1,0 +1,9 @@
+description = "Full-site blog health assessment scanning all posts for quality, links, and freshness"
+
+prompt = """
+Read the file skills/blog-audit/GEMINI.md and run a comprehensive blog audit on:
+
+{{args}}
+
+Scan all blog files, score each post, detect cannibalization, find orphan pages, identify stale content, and produce a prioritized action queue. Save to blog-audit-report.md.
+"""

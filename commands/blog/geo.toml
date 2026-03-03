@@ -1,0 +1,9 @@
+description = "Audit AI citation readiness and generate citation capsules with GEO score"
+
+prompt = """
+Read the file skills/blog-geo/GEMINI.md and run the full AI citation readiness audit on:
+
+{{args}}
+
+Score passage-level citability, Q&A formatting, entity clarity, content structure, and AI crawler accessibility. Generate citation capsules for each H2 section.
+"""

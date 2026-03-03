@@ -1,0 +1,9 @@
+description = "Generate a monthly or quarterly editorial calendar with topic clusters and freshness schedule"
+
+prompt = """
+Read the file skills/blog-calendar/GEMINI.md and generate an editorial calendar for:
+
+{{args}}
+
+Design topic clusters, apply the 60/30/10 content mix, detect content decay, plan freshness updates, and include seasonal hooks. Specify 'monthly' or 'quarterly' in your request.
+"""

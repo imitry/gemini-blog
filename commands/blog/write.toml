@@ -1,0 +1,9 @@
+description = "Write a new blog post from scratch with research, outline, images, charts, and SEO optimization"
+
+prompt = """
+Read the file skills/blog-write/GEMINI.md and follow its complete workflow to write a new blog post about:
+
+{{args}}
+
+Follow all phases: topic understanding, template selection, research, outline generation, chart generation, content writing, quality check, and delivery summary.
+"""

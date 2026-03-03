@@ -1,21 +1,4 @@
----
-name: blog-audit
-description: >
-  Full-site blog health assessment scanning all blog files for quality scores,
-  orphan pages, topic cannibalization, stale content, and AI citation readiness.
-  Spawns parallel subagents for comprehensive analysis. Produces per-post scores
-  and a prioritized action queue. Use when user says "audit blog", "blog audit",
-  "site audit", "blog health", "audit all posts", "check all blogs".
-allowed-tools:
-  - Read
-  - Write
-  - Bash
-  - Grep
-  - Glob
-  - Task
----
-
-# Blog Audit -- Full-Site Health Assessment
+﻿# Blog Audit -- Full-Site Health Assessment
 
 Performs a comprehensive blog health assessment across all posts in the project.
 Scans for quality scores, orphan pages, topic cannibalization, stale content,

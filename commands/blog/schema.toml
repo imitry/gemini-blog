@@ -1,0 +1,9 @@
+description = "Generate JSON-LD structured data schema markup for a blog post"
+
+prompt = """
+Read the file skills/blog-schema/GEMINI.md and generate complete JSON-LD schema markup for:
+
+{{args}}
+
+Generate BlogPosting, Person, Organization, BreadcrumbList, FAQPage, and ImageObject schemas using the @graph pattern.
+"""

@@ -1,0 +1,9 @@
+description = "Analyze and score a blog post on a 0-100 scale with AI content detection"
+
+prompt = """
+Read the file skills/blog-analyze/GEMINI.md and follow its scoring process to audit this blog post:
+
+{{args}}
+
+Score across all 5 categories (Content Quality, SEO, E-E-A-T, Technical, AI Citation Readiness), run AI content detection, and generate a prioritized issues report.
+"""

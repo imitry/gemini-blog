@@ -1,11 +1,3 @@
----
-name: gemini-blog
-description: >
-  Full-lifecycle blog engine with 12 commands, 12 content templates, 5-category
-  100-point scoring, and 4 specialized agents. Optimized for Google rankings
-  (December 2025 Core Update, E-E-A-T) and AI citations (GEO/AEO).
----
-
 # Blog -- Content Engine for Rankings & AI Citations
 
 Full-lifecycle blog management: strategy, briefs, outlines, writing, analysis,

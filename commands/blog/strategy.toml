@@ -1,0 +1,9 @@
+description = "Develop a full blog strategy with topic clusters, AI citation surface plan, and 90-day roadmap"
+
+prompt = """
+Read the file skills/blog-strategy/GEMINI.md and develop a comprehensive blog strategy for:
+
+{{args}}
+
+Include competitive landscape analysis, audience mapping, content pillar design, cluster architecture, AI citation surface strategy, and a 90-day roadmap.
+"""

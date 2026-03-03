@@ -1,26 +1,4 @@
----
-name: blog-brief
-description: >
-  Generate detailed content briefs for blog posts with target keywords,
-  content outlines, competitive analysis, recommended statistics, image and
-  chart suggestions, word count targets, internal linking architecture,
-  template recommendations (12 types), TL;DR drafts, citation capsule
-  planning, information gain prompts, and multi-channel distribution plans.
-  Briefs are optimized for Google rankings and AI citations (GEO/AEO). Use
-  when user says "content brief", "blog brief", "write brief", "outline blog",
-  "plan blog post", "blog outline", "content outline".
-allowed-tools:
-  - Read
-  - Write
-  - Bash
-  - Grep
-  - Glob
-  - WebFetch
-  - WebSearch
-  - Task
----
-
-# Blog Brief Generator -- Content Planning
+﻿# Blog Brief Generator -- Content Planning
 
 Generates comprehensive content briefs that guide blog writing for maximum
 impact on both Google rankings and AI citation platforms.
