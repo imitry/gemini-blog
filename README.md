@@ -1,6 +1,6 @@
 ﻿# gemini-blog
 
-![Gemini Blog вЂ” AI-Powered Blog Creation](assets/header.jpeg)
+![Gemini Blog -- AI-Powered Blog Creation](assets/header.jpeg)
 
 ![Gemini CLI Skill](https://img.shields.io/badge/Gemini_Code-Skill-blueviolet)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
@@ -9,7 +9,7 @@
 
 **The most comprehensive blog creation skill for Gemini CLI.**
 
-Strategy, briefs, calendars, writing, optimization, schema, repurposing, and full-site audits вЂ” all from slash commands. Dual-optimized for Google rankings and AI citation platforms (ChatGPT, Perplexity, AI Overviews).
+Strategy, briefs, calendars, writing, optimization, schema, repurposing, and full-site audits -- all from slash commands. Dual-optimized for Google rankings and AI citation platforms (ChatGPT, Perplexity, AI Overviews).
 
 ### [Watch the Demo](https://www.youtube.com/watch?v=AeLC4iutG8w)
 
@@ -19,9 +19,7 @@ Strategy, briefs, calendars, writing, optimization, schema, repurposing, and ful
 ## Quick Start
 
 ```bash
-git clone https://github.com/imitry/gemini-blog.git
-cd gemini-blog
-gemini extensions install .
+gemini extensions install https://github.com/imitry/gemini-blog
 ```
 
 Verify installation:
@@ -166,7 +164,7 @@ gemini extensions uninstall gemini-blog
 
 ## Integration
 
-Chart generation is built-in вЂ” no external dependencies required for full functionality.
+Chart generation is built-in -- no external dependencies required for full functionality.
 
 **Optional companion skills** (for deeper analysis of published pages):
 
