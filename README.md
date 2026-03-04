@@ -18,43 +18,33 @@ Strategy, briefs, calendars, writing, optimization, schema, repurposing, and ful
 
 ## Quick Start
 
-One-command install (Unix/macOS):
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/imitry/gemini-blog/main/install.sh | bash
-```
-
-Or clone and install manually:
-
 ```bash
 git clone https://github.com/imitry/gemini-blog.git
 cd gemini-blog
-chmod +x install.sh && ./install.sh
+gemini extensions install .
 ```
 
-Windows (PowerShell):
-```powershell
-.\install.ps1
+Verify installation:
+```bash
+gemini extensions list
 ```
-
-Restart Gemini CLI after installation to activate.
 
 ## Commands
 ![Blog write command demo](assets/blog-write-demo.gif)
 | Command | Description |
 |---------|-------------|
-| `/blog write <topic>` | Write a new blog post from scratch |
-| `/blog rewrite <file>` | Optimize an existing blog post |
-| `/blog analyze <file>` | Quality audit with 0-100 score |
-| `/blog brief <topic>` | Generate a detailed content brief |
-| `/blog calendar` | Generate an editorial calendar |
-| `/blog strategy <niche>` | Blog strategy and topic ideation |
-| `/blog outline <topic>` | SERP-informed content outline |
-| `/blog seo-check <file>` | Post-writing SEO validation |
-| `/blog schema <file>` | Generate JSON-LD schema markup |
-| `/blog repurpose <file>` | Repurpose for social, email, YouTube |
-| `/blog geo <file>` | AI citation readiness audit |
-| `/blog audit [directory]` | Full-site blog health assessment |
+| `/blog:write <topic>` | Write a new blog post from scratch |
+| `/blog:rewrite <file>` | Optimize an existing blog post |
+| `/blog:analyze <file>` | Quality audit with 0-100 score |
+| `/blog:brief <topic>` | Generate a detailed content brief |
+| `/blog:calendar` | Generate an editorial calendar |
+| `/blog:strategy <niche>` | Blog strategy and topic ideation |
+| `/blog:outline <topic>` | SERP-informed content outline |
+| `/blog:seo-check <file>` | Post-writing SEO validation |
+| `/blog:schema <file>` | Generate JSON-LD schema markup |
+| `/blog:repurpose <file>` | Repurpose for social, email, YouTube |
+| `/blog:geo <file>` | AI citation readiness audit |
+| `/blog:audit [directory]` | Full-site blog health assessment |
 
 ## Features
 
@@ -93,75 +83,73 @@ Next.js/MDX, Astro, Hugo, Jekyll, WordPress, Ghost, 11ty, Gatsby, and static HTM
 
 ```
 gemini-blog/
-в”њв”Ђв”Ђ blog/
-в”‚   в”њв”Ђв”Ђ GEMINI.md                        # Main orchestrator (12 commands)
-в”‚   в”њв”Ђв”Ђ references/                     # 12 on-demand reference docs
-в”‚   в”‚   в”њв”Ђв”Ђ google-landscape-2026.md
-в”‚   в”‚   в”њв”Ђв”Ђ geo-optimization.md
-в”‚   в”‚   в”њв”Ђв”Ђ content-rules.md
-в”‚   в”‚   в”њв”Ђв”Ђ visual-media.md
-в”‚   в”‚   в”њв”Ђв”Ђ quality-scoring.md
-в”‚   в”‚   в”њв”Ђв”Ђ platform-guides.md
-в”‚   в”‚   в”њв”Ђв”Ђ distribution-playbook.md
-в”‚   в”‚   в”њв”Ђв”Ђ content-templates.md
-в”‚   в”‚   в”њв”Ђв”Ђ eeat-signals.md
-в”‚   в”‚   в”њв”Ђв”Ђ ai-crawler-guide.md
-в”‚   в”‚   в”њв”Ђв”Ђ schema-stack.md
-в”‚   в”‚   в””в”Ђв”Ђ internal-linking.md
-в”‚   в””в”Ђв”Ђ templates/                      # 12 content type templates
-в”‚       в”њв”Ђв”Ђ how-to-guide.md
-в”‚       в”њв”Ђв”Ђ listicle.md
-в”‚       в”њв”Ђв”Ђ case-study.md
-в”‚       в”њв”Ђв”Ђ comparison.md
-в”‚       в”њв”Ђв”Ђ pillar-page.md
-в”‚       в”њв”Ђв”Ђ product-review.md
-в”‚       в”њв”Ђв”Ђ thought-leadership.md
-в”‚       в”њв”Ђв”Ђ roundup.md
-в”‚       в”њв”Ђв”Ђ tutorial.md
-в”‚       в”њв”Ђв”Ђ news-analysis.md
-в”‚       в”њв”Ђв”Ђ data-research.md
-в”‚       в””в”Ђв”Ђ faq-knowledge.md
-в”њв”Ђв”Ђ skills/                             # 13 sub-skills
-в”‚   в”њв”Ђв”Ђ blog-write/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-rewrite/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-analyze/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-brief/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-calendar/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-strategy/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-outline/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-seo-check/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-schema/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-repurpose/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-geo/GEMINI.md
-в”‚   в”њв”Ђв”Ђ blog-audit/GEMINI.md
-в”‚   в””в”Ђв”Ђ blog-chart/GEMINI.md            # Internal: SVG chart generation
-в”њв”Ђв”Ђ agents/                             # 4 specialized agents
-в”‚   в”њв”Ђв”Ђ blog-researcher.md
-в”‚   в”њв”Ђв”Ђ blog-writer.md
-в”‚   в”њв”Ђв”Ђ blog-seo.md
-в”‚   в””в”Ђв”Ђ blog-reviewer.md
-в”њв”Ђв”Ђ scripts/
-в”‚   в””в”Ђв”Ђ analyze_blog.py                 # Python quality analysis (5-category scoring)
-в”њв”Ђв”Ђ docs/                               # 6 documentation files
-в”‚   в”њв”Ђв”Ђ INSTALLATION.md
-в”‚   в”њв”Ђв”Ђ COMMANDS.md
-в”‚   в”њв”Ђв”Ђ ARCHITECTURE.md
-в”‚   в”њв”Ђв”Ђ TEMPLATES.md
-в”‚   в”њв”Ђв”Ђ TROUBLESHOOTING.md
-в”‚   в””в”Ђв”Ђ MCP-INTEGRATION.md
-в”њв”Ђв”Ђ assets/                             # Images and demo GIFs
-в”‚   в”њв”Ђв”Ђ header.jpeg
-в”‚   в”њв”Ђв”Ђ blog-write-demo.gif
-в”‚   в””в”Ђв”Ђ blog-command-demo.gif
-в”њв”Ђв”Ђ install.sh                          # Unix/macOS installer
-в”њв”Ђв”Ђ install.ps1                         # Windows PowerShell installer
-в”њв”Ђв”Ђ uninstall.sh                        # Unix/macOS uninstaller
-в”њв”Ђв”Ђ uninstall.ps1                       # Windows PowerShell uninstaller
-в”њв”Ђв”Ђ requirements.txt                    # Python dependencies
-в”њв”Ђв”Ђ CHANGELOG.md
-в”њв”Ђв”Ђ TODO.md
-в”њв”Ђв”Ђ LICENSE
-в””в”Ђв”Ђ README.md
++-- gemini-extension.json            # Extension manifest
++-- GEMINI.md                        # Main orchestrator (12 commands)
++-- blog/
+|   +-- references/                  # 12 on-demand reference docs
+|   |   +-- google-landscape-2026.md
+|   |   +-- geo-optimization.md
+|   |   +-- content-rules.md
+|   |   +-- visual-media.md
+|   |   +-- quality-scoring.md
+|   |   +-- platform-guides.md
+|   |   +-- distribution-playbook.md
+|   |   +-- content-templates.md
+|   |   +-- eeat-signals.md
+|   |   +-- ai-crawler-guide.md
+|   |   +-- schema-stack.md
+|   |   \-- internal-linking.md
+|   +-- templates/                   # 12 content type templates
+|   |   +-- how-to-guide.md
+|   |   +-- listicle.md
+|   |   +-- case-study.md
+|   |   +-- comparison.md
+|   |   +-- pillar-page.md
+|   |   +-- product-review.md
+|   |   +-- thought-leadership.md
+|   |   +-- roundup.md
+|   |   +-- tutorial.md
+|   |   +-- news-analysis.md
+|   |   +-- data-research.md
+|   |   \-- faq-knowledge.md
+|   \-- scripts/
+|       \-- analyze_blog.py          # Python quality analysis
++-- skills/                          # 13 sub-skills
+|   +-- blog-write/GEMINI.md
+|   +-- blog-rewrite/GEMINI.md
+|   +-- blog-analyze/GEMINI.md
+|   +-- blog-brief/GEMINI.md
+|   +-- blog-calendar/GEMINI.md
+|   +-- blog-strategy/GEMINI.md
+|   +-- blog-outline/GEMINI.md
+|   +-- blog-seo-check/GEMINI.md
+|   +-- blog-schema/GEMINI.md
+|   +-- blog-repurpose/GEMINI.md
+|   +-- blog-geo/GEMINI.md
+|   +-- blog-audit/GEMINI.md
+|   \-- blog-chart/GEMINI.md         # Internal: SVG chart generation
++-- agents/                          # 4 specialized agents
+|   +-- blog-researcher.GEMINI.md
+|   +-- blog-writer.GEMINI.md
+|   +-- blog-seo.GEMINI.md
+|   \-- blog-reviewer.GEMINI.md
++-- commands/blog/                   # 12 Gemini CLI slash commands
+|   +-- write.toml
+|   +-- analyze.toml
+|   \-- ... (10 more)
++-- docs/                            # Documentation
+|   +-- INSTALLATION.md
+|   +-- WORKFLOW-TUTORIAL.md
+|   +-- COMMANDS.md
+|   +-- ARCHITECTURE.md
+|   +-- TEMPLATES.md
+|   +-- TROUBLESHOOTING.md
+|   \-- MCP-INTEGRATION.md
++-- assets/                          # Images and demo GIFs
++-- requirements.txt                 # Python dependencies
++-- CHANGELOG.md
++-- LICENSE
+\-- README.md
 ```
 
 ## Requirements
@@ -172,14 +160,8 @@ gemini-blog/
 
 ## Uninstall
 
-Unix/macOS:
 ```bash
-chmod +x uninstall.sh && ./uninstall.sh
-```
-
-Windows (PowerShell):
-```powershell
-.\uninstall.ps1
+gemini extensions uninstall gemini-blog
 ```
 
 ## Integration
