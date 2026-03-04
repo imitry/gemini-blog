@@ -1,35 +1,3 @@
----
-name: blog
-description: >
-  Full-lifecycle blog engine with 12 commands, 12 content templates, 5-category
-  100-point scoring, and 4 specialized agents. Optimized for Google rankings
-  (December 2025 Core Update, E-E-A-T) and AI citations (GEO/AEO). Writes,
-  rewrites, analyzes, outlines, audits, and repurposes blog content with
-  answer-first formatting, sourced statistics, Pixabay/Unsplash/Pexels images,
-  built-in SVG chart generation, JSON-LD schema generation, and freshness signals.
-  Supports any platform (WordPress, Next.js MDX, Hugo, Ghost, Astro, Jekyll,
-  11ty, Gatsby, HTML). Use when user says "blog", "write blog", "blog post",
-  "blog strategy", "content brief", "editorial calendar", "analyze blog",
-  "rewrite blog", "update blog", "blog SEO", "blog optimization", "content plan",
-  "blog outline", "seo check", "schema markup", "repurpose", "geo audit",
-  "blog audit", "citation readiness".
-user-invocable: true
-argument-hint: "[write|rewrite|analyze|brief|calendar|strategy|outline|seo-check|schema|repurpose|geo|audit] [topic-or-file]"
-allowed-tools:
-  - read_file
-  - write_file
-  - replace
-  - run_shell_command
-  - bash
-  - grep_search
-  - glob
-  - web_fetch
-  - google_web_search
-  - write_todos
-  - list_directory
-  - ask_user
----
-
 # Blog -- Content Engine for Rankings & AI Citations
 
 Full-lifecycle blog management: strategy, briefs, outlines, writing, analysis,
@@ -147,18 +115,18 @@ Blog quality is scored across 5 categories (100 points total):
 
 Load on-demand as needed (12 references):
 
-- `references/google-landscape-2026.md` -- December 2025 Core Update, E-E-A-T, algorithm changes
-- `references/geo-optimization.md` -- GEO/AEO techniques, AI citation factors
-- `references/content-rules.md` -- Structure, readability, answer-first formatting
-- `references/visual-media.md` -- Image sourcing (Pixabay, Unsplash, Pexels) + SVG chart integration
-- `references/quality-scoring.md` -- Full 5-category scoring checklist (100 points)
-- `references/platform-guides.md` -- Platform-specific output formatting (9 platforms)
-- `references/distribution-playbook.md` -- Content distribution strategy (Reddit, YouTube, LinkedIn, etc.)
-- `references/content-templates.md` -- Content type template index (12 templates)
-- `references/eeat-signals.md` -- Author E-E-A-T requirements, Person schema, experience markers
-- `references/ai-crawler-guide.md` -- AI bot management, robots.txt, SSR requirements
-- `references/schema-stack.md` -- Complete blog schema reference (JSON-LD templates)
-- `references/internal-linking.md` -- Link architecture, anchor text, hub-and-spoke model
+- `blog/references/google-landscape-2026.md` -- December 2025 Core Update, E-E-A-T, algorithm changes
+- `blog/references/geo-optimization.md` -- GEO/AEO techniques, AI citation factors
+- `blog/references/content-rules.md` -- Structure, readability, answer-first formatting
+- `blog/references/visual-media.md` -- Image sourcing (Pixabay, Unsplash, Pexels) + SVG chart integration
+- `blog/references/quality-scoring.md` -- Full 5-category scoring checklist (100 points)
+- `blog/references/platform-guides.md` -- Platform-specific output formatting (9 platforms)
+- `blog/references/distribution-playbook.md` -- Content distribution strategy (Reddit, YouTube, LinkedIn, etc.)
+- `blog/references/content-templates.md` -- Content type template index (12 templates)
+- `blog/references/eeat-signals.md` -- Author E-E-A-T requirements, Person schema, experience markers
+- `blog/references/ai-crawler-guide.md` -- AI bot management, robots.txt, SSR requirements
+- `blog/references/schema-stack.md` -- Complete blog schema reference (JSON-LD templates)
+- `blog/references/internal-linking.md` -- Link architecture, anchor text, hub-and-spoke model
 
 ## Content Templates
 
@@ -179,7 +147,7 @@ Load on-demand as needed (12 references):
 | `data-research` | Original data study | 2,000-3,000 |
 | `faq-knowledge` | Comprehensive FAQ/knowledge base | 1,500-2,000 |
 
-Templates are in `templates/` and contain section structure, markers, and checklists.
+Templates are in `blog/templates/` and contain section structure, markers, and checklists.
 
 ## Sub-Skills
 
@@ -270,3 +238,5 @@ Chart generation is built-in — no external dependencies required for full func
 | Use tier 4-5 sources | Low authority hurts E-E-A-T |
 | Generate without research | AI-generated consensus content is penalized |
 | Skip visual elements entirely | Blogs with images get 94% more views |
+
+

@@ -1,34 +1,12 @@
----
-name: blog-analyze
-description: >
-  Audit and score blog posts on a 5-category 100-point scoring system covering
-  content quality, SEO optimization, E-E-A-T signals, technical elements, and
-  AI citation readiness. Includes AI content detection (burstiness, phrase
-  flagging, vocabulary diversity). Supports export formats (markdown, JSON,
-  table) and batch analysis with sorting. Generates prioritized recommendations
-  (Critical/High/Medium/Low) with specific fixes. Works with any format (MDX,
-  markdown, HTML, URL). Use when user says "analyze blog", "audit blog",
-  "blog score", "check blog quality", "blog review", "rate this blog",
-  "blog health check".
-allowed-tools:
-  - read_file
-  - write_file
-  - run_shell_command
-  - bash
-  - grep_search
-  - glob
-  - web_fetch
----
-
-# Blog Analyzer -- Quality Audit & Scoring
+﻿# Blog Analyzer -- Quality Audit & Scoring
 
 Scores blog posts on a 0-100 scale across 5 categories and provides prioritized
 improvement recommendations. Includes AI content detection analysis. Works with
 local files or published URLs.
 
 Reference documents:
-- `references/quality-scoring.md` -- full scoring checklist
-- `references/eeat-signals.md` -- E-E-A-T evaluation criteria
+- `blog/references/quality-scoring.md` -- full scoring checklist
+- `blog/references/eeat-signals.md` -- E-E-A-T evaluation criteria
 
 ## Input Handling
 
@@ -57,7 +35,7 @@ Read the blog post and extract:
 
 ### Step 2: Score Each Category
 
-Load `references/quality-scoring.md` for the full checklist. Score each:
+Load `blog/references/quality-scoring.md` for the full checklist. Score each:
 
 #### Content Quality (30 points)
 | Check | Points | Pass Criteria |
@@ -65,9 +43,9 @@ Load `references/quality-scoring.md` for the full checklist. Score each:
 | Depth/comprehensiveness | 7 | Covers topic thoroughly, no major gaps |
 | Readability (Flesch 60-70) | 7 | Flesch 60-70 ideal, 55-75 acceptable; Grade 7-8; Gunning Fog 7-8 |
 | Originality/unique value markers | 5 | Original data, case studies, first-hand experience |
-| Sentence & paragraph structure | 4 | Avg sentence 15-20 words, ≤25% over 20; paragraphs 40-80 words; H2 every 200-300 words |
+| Sentence & paragraph structure | 4 | Avg sentence 15-20 words, в‰¤25% over 20; paragraphs 40-80 words; H2 every 200-300 words |
 | Engagement elements | 4 | TL;DR box, callouts, varied content blocks |
-| Grammar/anti-pattern | 3 | Passive voice ≤10%, AI trigger words ≤5/1K, transition words 20-30%, clean prose |
+| Grammar/anti-pattern | 3 | Passive voice в‰¤10%, AI trigger words в‰¤5/1K, transition words 20-30%, clean prose |
 
 #### SEO Optimization (25 points)
 | Check | Points | Pass Criteria |
@@ -279,3 +257,5 @@ summary table. Use `--sort score` to order by score (ascending by default).
 
 Run `/blog rewrite <file>` on each, starting from lowest score.
 ```
+
+

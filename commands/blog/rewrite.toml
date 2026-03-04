@@ -1,0 +1,9 @@
+description = "Rewrite and optimize an existing blog post for Google rankings and AI citations"
+
+prompt = """
+Read the file skills/blog-rewrite/GEMINI.md and follow its complete workflow to audit and optimize this blog post:
+
+{{args}}
+
+Run the full audit first (Phase 1), then research replacements (Phase 2), rewrite with all optimizations applied (Phases 3-5), and produce a before/after score comparison.
+"""

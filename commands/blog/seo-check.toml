@@ -1,0 +1,9 @@
+description = "Run on-page SEO validation with pass/fail checklist after writing a blog post"
+
+prompt = """
+Read the file skills/blog-seo-check/GEMINI.md and run the full SEO validation checklist on:
+
+{{args}}
+
+Check title tag, meta description, heading hierarchy, internal/external links, canonical URL, OG tags, Twitter Card, and URL structure.
+"""

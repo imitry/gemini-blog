@@ -5,12 +5,12 @@ description: >
   with answer-first formatting, proper heading hierarchy, sourced statistics,
   and natural readability. Follows the 6 pillars of dual optimization.
   Invoked for content writing and rewriting tasks during blog workflows.
-context: fork
 tools:
   - read_file
   - write_file
   - replace
   - grep_search
+  - list_directory
   - glob
 ---
 
@@ -149,7 +149,7 @@ After completing the full draft, before returning content:
    - Check for passive voice clusters -- rewrite to active
    - Replace jargon with plain alternatives where possible
 2. If `analyze_blog.py` is accessible, run a quick check:
-   `python3 ~/.gemini/skills/blog/scripts/analyze_blog.py <draft_file> --category content`
+   `python3 blog/scripts/analyze_blog.py <draft_file> --category content`
 3. If readability sub-score is below 5/7, revise before returning:
    - Split sentences over 25 words
    - Break paragraphs over 100 words

@@ -1,0 +1,9 @@
+description = "Generate a detailed content brief with research, outline, and distribution plan"
+
+prompt = """
+Read the file skills/blog-brief/GEMINI.md and follow its workflow to create a comprehensive content brief for:
+
+{{args}}
+
+Include keyword research, competitive analysis, statistics, content outline, visual element plan, and distribution strategy.
+"""

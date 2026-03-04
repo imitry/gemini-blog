@@ -5,11 +5,10 @@ description: >
   elements post-writing: title tag, meta description, heading hierarchy,
   internal/external links, canonical URL, OG meta tags, Twitter Card,
   URL structure. Produces a pass/fail checklist with specific fixes.
-context: fork
 tools:
   - read_file
   - grep_search
-  - glob
+  - list_directory
   - web_fetch
 ---
 
@@ -58,7 +57,7 @@ rewrite content — you identify issues and prescribe fixes.
 - Source tier: All tier 1-3 only
 - Relevance: Links support adjacent claims
 - Attributes: rel="nofollow" for sponsored, rel="noopener" for new tabs
-- Broken link check: Verify URLs resolve (WebFetch status)
+- Broken link check: Verify URLs resolve (web_fetch status)
 - **Pass criteria**: All tier 1-3 + no broken links
 
 ### 6. Canonical URL

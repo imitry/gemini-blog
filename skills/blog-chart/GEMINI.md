@@ -1,30 +1,10 @@
----
-name: blog-chart
-description: >
-  Generate dark-mode-compatible inline SVG data visualization charts for blog
-  posts. Supports horizontal bar, grouped bar, donut, line, lollipop, area,
-  and radar charts with automatic platform detection (HTML vs JSX/MDX).
-  Enforces chart type diversity, accessible markup (role=img, aria-label),
-  source attribution, and transparent backgrounds. Use when user says
-  "blog chart", "generate chart", "data visualization", "svg chart",
-  "blog graph", "visualize data", or when the blog-write workflow identifies
-  chart-worthy data points (3+ comparable metrics, trends, before/after data).
-allowed-tools:
-  - read_file
-  - write_file
-  - replace
-  - run_shell_command
-  - bash
-  - grep_search
----
-
-# Blog Chart -- Built-In SVG Data Visualization
+﻿# Blog Chart -- Built-In SVG Data Visualization
 
 Generates dark-mode-compatible inline SVG charts for blog posts. Invoked
 internally by `blog-write` and `blog-rewrite` when chart-worthy data is
 identified. Not a standalone user-facing command.
 
-**Styling source of truth:** `references/visual-media.md`
+**Styling source of truth:** `blog/references/visual-media.md`
 
 ## Input Format
 
@@ -41,7 +21,7 @@ Chart Request:
 
 ## Chart Type Selection
 
-Select based on the data pattern. Diversity is mandatory — never repeat a
+Select based on the data pattern. Diversity is mandatory вЂ” never repeat a
 type within one post.
 
 | Data Pattern | Best Chart Type |
@@ -251,3 +231,5 @@ Wrap every chart in a `<figure>` element:
 - [ ] Data values match the source data exactly
 - [ ] Color palette uses only approved colors
 - [ ] ViewBox is `0 0 560 380` (standard) or justified alternative
+
+

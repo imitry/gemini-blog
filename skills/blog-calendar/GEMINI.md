@@ -1,25 +1,4 @@
----
-name: blog-calendar
-description: >
-  Generate editorial calendars for blogs with topic clusters, publishing
-  schedules, content decay detection, freshness update plans, seasonal
-  opportunities, content mix formula, template integration, and distribution
-  scheduling. Plans monthly or quarterly calendars optimized for SEO topic
-  authority and AI citation freshness requirements (30-day update cycles).
-  Use when user says "editorial calendar", "content calendar", "blog calendar",
-  "publishing schedule", "blog plan", "content plan", "what should I write".
-allowed-tools:
-  - read_file
-  - write_file
-  - run_shell_command
-  - bash
-  - grep_search
-  - glob
-  - web_fetch
-  - google_web_search
----
-
-# Blog Calendar -- Editorial Planning
+﻿# Blog Calendar -- Editorial Planning
 
 Generates editorial calendars with topic clusters, publishing cadence,
 freshness update schedules, content decay detection, template recommendations,
@@ -43,12 +22,12 @@ Design 3-5 topic clusters (pillar + supporting content):
 
 ```
 Cluster: [Pillar Topic]
-├── Pillar Page: [Comprehensive guide — 3,000+ words]
-├── Supporting: [Subtopic 1 — 2,000 words]
-├── Supporting: [Subtopic 2 — 2,000 words]
-├── Supporting: [Subtopic 3 — 1,500 words]
-├── Comparison: [X vs Y — 1,500 words]
-└── FAQ: [Common questions — 1,500 words]
+в”њв”Ђв”Ђ Pillar Page: [Comprehensive guide вЂ” 3,000+ words]
+в”њв”Ђв”Ђ Supporting: [Subtopic 1 вЂ” 2,000 words]
+в”њв”Ђв”Ђ Supporting: [Subtopic 2 вЂ” 2,000 words]
+в”њв”Ђв”Ђ Supporting: [Subtopic 3 вЂ” 1,500 words]
+в”њв”Ђв”Ђ Comparison: [X vs Y вЂ” 1,500 words]
+в””в”Ђв”Ђ FAQ: [Common questions вЂ” 1,500 words]
 ```
 
 Each cluster should:
@@ -146,7 +125,7 @@ For each new post entry, recommend a content template from these 12 available:
 `product-review`, `thought-leadership`, `roundup`, `tutorial`,
 `news-analysis`, `data-research`, `faq-knowledge`
 
-Reference: `references/content-templates.md` for full template details.
+Reference: `blog/references/content-templates.md` for full template details.
 
 #### Monthly Calendar Format
 
@@ -265,7 +244,7 @@ Channel timing rules:
 - **YouTube**: Plan companion video for pillar posts only (resource-intensive)
 - **Twitter/X**: Same day as publish (thread key takeaways)
 
-Reference: `references/distribution-playbook.md` for detailed channel tactics.
+Reference: `blog/references/distribution-playbook.md` for detailed channel tactics.
 
 ### Step 5.7: Freshness Automation
 
@@ -296,3 +275,5 @@ Save the calendar and suggest:
 4. Re-run `/blog calendar` next month/quarter for the next plan
 5. Review the Content Decay Report weekly and address Critical items first
 6. Track Topic Cluster Progress monthly to ensure clusters reach completion
+
+
