@@ -9,14 +9,42 @@ scoring targets, and GEO-specific optimization plans.
 
 ### Step 1: Discovery
 
-Gather context through questions or project analysis:
+Gather context by invoking the `ask_user` tool using the following JSON structure!
+You MUST invoke the `ask_user` tool using this exact format:
 
-1. **Business**: What do you sell/do? Who are your customers?
-2. **Blog goals**: Traffic? Leads? Authority? AI citations?
-3. **Current state**: Existing blog content? (scan if project available)
-4. **Competitors**: Who are your 3-5 main competitors?
-5. **Differentiator**: What unique expertise or data do you have?
-6. **Resources**: Writing capacity (posts/week), budget for visuals?
+```json
+{
+  "questions": [
+    {
+      "header": "Business",
+      "question": "What do you sell/do, and who are your customers?",
+      "type": "text"
+    },
+    {
+      "header": "Goals",
+      "question": "What are your primary blog goals (Traffic, Leads, Authority, AI citations, etc)?",
+      "type": "text"
+    },
+    {
+      "header": "Competitors",
+      "question": "Who are your 3-5 main competitors?",
+      "type": "text"
+    },
+    {
+      "header": "Differentiator",
+      "question": "What unique expertise or original data do you have?",
+      "type": "text"
+    },
+    {
+      "header": "Resources",
+      "question": "What is your writing capacity (posts/week) and budget for visuals?",
+      "type": "text"
+    }
+  ]
+}
+```
+
+Wait for the tool execution response before proceeding. If the user provided all required details in their initial prompt, skip this step. Also scan for existing blog content (Glob for *.md, *.mdx, *.html) if a project is available.
 
 ### Step 2: Competitive Landscape
 

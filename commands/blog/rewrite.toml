@@ -1,7 +1,7 @@
 description = "Rewrite and optimize an existing blog post for Google rankings and AI citations"
 
 prompt = """
-Read the file skills/blog-rewrite/GEMINI.md and follow its complete workflow to audit and optimize this blog post:
+Read the file ${extensionPath}/skills/blog-rewrite/GEMINI.md and follow its complete workflow to audit and optimize this blog post:
 
 {{args}}
 

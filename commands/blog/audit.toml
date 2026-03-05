@@ -1,7 +1,7 @@
 description = "Full-site blog health assessment scanning all posts for quality, links, and freshness"
 
 prompt = """
-Read the file skills/blog-audit/GEMINI.md and run a comprehensive blog audit on:
+Read the file ${extensionPath}/skills/blog-audit/GEMINI.md and run a comprehensive blog audit on:
 
 {{args}}
 

@@ -21,17 +21,30 @@ Read the blog post and extract the core content elements:
 
 ### Step 2: Ask User
 
-Prompt the user to select which platforms to generate content for:
+Prompt the user to select which platforms to generate content for using the `ask_user` tool!
+You MUST use the `ask_user` tool with the following JSON structure:
 
-1. Twitter/X thread
-2. LinkedIn article
-3. YouTube video script
-4. Reddit discussion post
-5. Email newsletter excerpt
-6. All of the above
+```json
+{
+  "questions": [
+    {
+      "header": "Platform",
+      "question": "Which platforms do you want to generate repurposed content for?",
+      "type": "choice",
+      "multiSelect": true,
+      "options": [
+        { "label": "Twitter/X", "description": "Twitter/X thread" },
+        { "label": "LinkedIn", "description": "LinkedIn article" },
+        { "label": "YouTube", "description": "YouTube video script" },
+        { "label": "Reddit", "description": "Reddit discussion post" },
+        { "label": "Newsletter", "description": "Email newsletter excerpt" }
+      ]
+    }
+  ]
+}
+```
 
-If the user specifies a platform directly (e.g., "repurpose for Twitter"),
-skip this step and generate for that platform only.
+Wait for the tool execution response. If the user specifies a platform directly in their initial request (e.g., "repurpose for Twitter"), skip this step and generate for that platform only.
 
 ### Step 3: Twitter/X Thread
 

@@ -1,7 +1,7 @@
 description = "Repurpose a blog post for Twitter/X, LinkedIn, YouTube, Reddit, and email"
 
 prompt = """
-Read the file skills/blog-repurpose/GEMINI.md and follow its workflow to repurpose this blog post for multiple platforms:
+Read the file ${extensionPath}/skills/blog-repurpose/GEMINI.md and follow its workflow to repurpose this blog post for multiple platforms:
 
 {{args}}
 

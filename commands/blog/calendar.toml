@@ -1,7 +1,7 @@
 description = "Generate a monthly or quarterly editorial calendar with topic clusters and freshness schedule"
 
 prompt = """
-Read the file skills/blog-calendar/GEMINI.md and generate an editorial calendar for:
+Read the file ${extensionPath}/skills/blog-calendar/GEMINI.md and generate an editorial calendar for:
 
 {{args}}
 

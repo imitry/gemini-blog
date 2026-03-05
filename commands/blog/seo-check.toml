@@ -1,7 +1,7 @@
 description = "Run on-page SEO validation with pass/fail checklist after writing a blog post"
 
 prompt = """
-Read the file skills/blog-seo-check/GEMINI.md and run the full SEO validation checklist on:
+Read the file ${extensionPath}/skills/blog-seo-check/GEMINI.md and run the full SEO validation checklist on:
 
 {{args}}
 
