@@ -1,7 +1,7 @@
 description = "Write a new blog post from scratch with research, outline, images, charts, and SEO optimization"
 
 prompt = """
-Read the file skills/blog-write/GEMINI.md and follow its complete workflow to write a new blog post about:
+Read the file ${extensionPath}/skills/blog-write/GEMINI.md and follow its complete workflow to write a new blog post about:
 
 {{args}}
 

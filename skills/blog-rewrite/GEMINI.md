@@ -57,7 +57,21 @@ and AI citation platforms. Preserves the author's voice while applying the
 6. **Present audit summary** with specific findings, AI detection results, cannibalization status, and score
 7. **Enter plan mode** ------ Present section-by-section optimization plan
 
-Wait for user approval before proceeding.
+Use the `ask_user` tool to get user approval on the plan before proceeding.
+You MUST invoke the `ask_user` tool using the following JSON structure:
+
+```json
+{
+  "questions": [
+    {
+      "header": "Approval",
+      "question": "Do you approve this optimization plan? (Provide feedback if any changes are needed)",
+      "type": "text"
+    }
+  ]
+}
+```
+Wait for the tool execution response before proceeding. If the user requests changes, adjust the plan and ask again.
 
 ### Phase 2: Research
 
@@ -196,7 +210,31 @@ Review the post for original value and tag it:
 - `[UNIQUE INSIGHT]` ------ Novel analysis, contrarian perspectives backed by data
 
 If the post lacks original value markers:
-- Ask the author for first-hand data or experience to include
+- Use the `ask_user` tool to gather first-hand data or experience to include from the author.
+You MUST invoke the `ask_user` tool using the following JSON structure:
+
+```json
+{
+  "questions": [
+    {
+      "header": "Original Data",
+      "question": "What original data, surveys, or experiments can we include?",
+      "type": "text"
+    },
+    {
+      "header": "Experience",
+      "question": "Do you have any personal experiences, observations or lessons learned regarding this topic?",
+      "type": "text"
+    },
+    {
+      "header": "Unique Insight",
+      "question": "What contrarian perspective or novel analysis can we add?",
+      "type": "text"
+    }
+  ]
+}
+```
+Wait for the tool execution response before proceeding.
 - At minimum, add analytical insights that connect existing research in new ways
 - Target: at least 2-3 markers per post
 
@@ -277,13 +315,13 @@ After rewriting, verify all quality gates pass:
 - Images: [count]
 
 ### Ready for
-- `/blog analyze <file>` to verify final score
+- `/blog:analyze <file>` to verify final score
 - Publishing / deploying
 ```
 
 ## Update Mode
 
-When invoked as `/blog update <file>`, focus on freshness:
+When invoked as `/blog:update <file>`, focus on freshness:
 1. Update statistics to latest available data (2025-2026)
 2. Add new developments since last update
 3. Refresh images if older than 1 year

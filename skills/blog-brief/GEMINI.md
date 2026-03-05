@@ -12,13 +12,43 @@ Reference documents:
 
 ### Step 1: Topic Intake
 
-Gather from the user:
-1. **Topic or keyword** (required)
-2. **Target audience** (who reads this?)
-3. **Search intent** -- Informational, commercial, transactional, navigational
-4. **Business context** -- What does the company do? What's the CTA?
+Use the `ask_user` tool to gather required details from the user!
+You MUST invoke the `ask_user` tool using the following JSON structure:
 
-If only a topic is given, infer the rest from context.
+```json
+{
+  "questions": [
+    {
+      "header": "Topic",
+      "question": "What is the topic or target keyword for this brief?",
+      "type": "text"
+    },
+    {
+      "header": "Audience",
+      "question": "Who is the target audience (e.g., beginners, technical experts)?",
+      "type": "text"
+    },
+    {
+      "header": "Intent",
+      "question": "What is the search intent?",
+      "type": "choice",
+      "options": [
+        { "label": "Informational", "description": "Looking for answers" },
+        { "label": "Commercial", "description": "Researching tools/brands" },
+        { "label": "Transactional", "description": "Ready to buy" },
+        { "label": "Navigational", "description": "Looking for a specific page" }
+      ]
+    },
+    {
+      "header": "Business Context",
+      "question": "What does the company do and what is the call to action (CTA)?",
+      "type": "text"
+    }
+  ]
+}
+```
+
+Wait for the tool execution response before proceeding. If the user provided all required details in their initial prompt, skip this step.
 
 ### Step 2: Keyword Research
 
@@ -241,6 +271,6 @@ claim that can stand alone when quoted.
 ### Step 6: Save the Brief
 
 Save to the user's project as `briefs/[slug]-brief.md` or to a location
-they specify. Confirm the brief is ready for `/blog write`.
+they specify. Confirm the brief is ready for `/blog:write`.
 
 

@@ -14,11 +14,43 @@ follows the 6 pillars of dual optimization (Google rankings + AI citations).
 
 ### Phase 1: Topic Understanding
 
-1. **Clarify the topic** ------ If the user provides just a topic, ask:
-   - Target audience (who is this for?)
-   - Primary keyword / search intent
-   - Desired word count (default: 2,000-2,500 words)
-   - Platform/format (MDX, markdown, HTML ------ auto-detect if in a project)
+1. **Clarify the topic** ------ If the user provides just a topic, use the `ask_user` tool to gather required details!
+   You MUST invoke the `ask_user` tool using the following JSON structure:
+
+```json
+{
+  "questions": [
+    {
+      "header": "Audience",
+      "question": "Who is the target audience (who is this for)?",
+      "type": "text"
+    },
+    {
+      "header": "Intent",
+      "question": "What is the primary keyword or search intent?",
+      "type": "text"
+    },
+    {
+      "header": "Length",
+      "question": "What is the desired word count?",
+      "type": "text",
+      "placeholder": "e.g., 2,000-2,500 words"
+    },
+    {
+      "header": "Platform",
+      "question": "What is the platform/format?",
+      "type": "choice",
+      "options": [
+        { "label": "MDX", "description": "MDX file format" },
+        { "label": "Markdown", "description": "Standard markdown" },
+        { "label": "HTML", "description": "Raw HTML" },
+        { "label": "Auto-detect", "description": "Infer from project files" }
+      ]
+    }
+  ]
+}
+```
+   Wait for the tool execution response before proceeding. If the user provided all required details in their initial prompt, skip this step.
 2. **If a brief exists** ------ Load it and skip to Phase 1.5
 
 ### Phase 1.5: Template Selection
@@ -132,7 +164,21 @@ adapt this skeleton to match the template's section structure:
 - [INTERNAL-LINK: anchor text ------ next logical content]
 ```
 
-Present the outline to the user for approval before writing.
+Present the outline to the user. You MUST use the `ask_user` tool to request their approval before writing.
+Use the following JSON structure:
+
+```json
+{
+  "questions": [
+    {
+      "header": "Approval",
+      "question": "Do you approve of this outline? (If no, please provide feedback in the next prompt, or type 'No' to abort)",
+      "type": "text"
+    }
+  ]
+}
+```
+Wait for the tool execution response before proceeding. If the user requests changes, adjust the outline and ask again.
 
 ### Phase 4: Chart Generation (Built-In)
 
@@ -425,7 +471,7 @@ Present the completed article with a summary:
 - Review and customize for your brand voice
 - Resolve [INTERNAL-LINK] placeholders with actual URLs
 - Add internal links to your existing content
-- Run `/blog analyze <file>` to verify quality score
+- Run `/blog:analyze <file>` to verify quality score
 ```
 
 

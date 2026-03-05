@@ -1,7 +1,7 @@
 description = "Generate a SERP-informed content outline with competitive gap analysis"
 
 prompt = """
-Read the file skills/blog-outline/GEMINI.md and follow its workflow to generate a structured outline for:
+Read the file ${extensionPath}/skills/blog-outline/GEMINI.md and follow its workflow to generate a structured outline for:
 
 {{args}}
 

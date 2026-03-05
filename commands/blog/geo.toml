@@ -1,7 +1,7 @@
 description = "Audit AI citation readiness and generate citation capsules with GEO score"
 
 prompt = """
-Read the file skills/blog-geo/GEMINI.md and run the full AI citation readiness audit on:
+Read the file ${extensionPath}/skills/blog-geo/GEMINI.md and run the full AI citation readiness audit on:
 
 {{args}}
 

@@ -1,7 +1,7 @@
 description = "Generate a detailed content brief with research, outline, and distribution plan"
 
 prompt = """
-Read the file skills/blog-brief/GEMINI.md and follow its workflow to create a comprehensive content brief for:
+Read the file ${extensionPath}/skills/blog-brief/GEMINI.md and follow its workflow to create a comprehensive content brief for:
 
 {{args}}
 

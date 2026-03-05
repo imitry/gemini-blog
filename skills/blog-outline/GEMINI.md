@@ -7,14 +7,38 @@ competitive analysis.
 
 ## Workflow
 
-### Step 1: Topic & Intent
+### Step 1: Topic Intake
 
-Gather from the user:
-1. **Topic or target keyword** (required)
-2. **Target keyword** ------ the exact phrase to rank for (if different from topic)
-3. **Search intent** ------ Informational, commercial, or transactional
+Use the `ask_user` tool to gather required details from the user!
+You MUST invoke the `ask_user` tool using the following JSON structure:
 
-If only a topic is given, infer the keyword and intent from context.
+```json
+{
+  "questions": [
+    {
+      "header": "Topic",
+      "question": "What is the topic or target keyword?",
+      "type": "text"
+    },
+    {
+      "header": "Target Keyword",
+      "question": "What is the exact phrase to rank for (if different from topic)?",
+      "type": "text"
+    },
+    {
+      "header": "Intent",
+      "question": "What is the search intent?",
+      "type": "choice",
+      "options": [
+        { "label": "Informational", "description": "Looking for answers" },
+        { "label": "Commercial", "description": "Researching tools/brands" },
+        { "label": "Transactional", "description": "Ready to buy" }
+      ]
+    }
+  ]
+}
+```
+Wait for the tool execution response before proceeding. If only a topic was given, infer the keyword and intent from context.
 
 ### Step 2: SERP Analysis
 
@@ -113,7 +137,7 @@ After generating the outline, add a dedicated content gaps analysis:
 ### Step 5: Save
 
 Save the outline to `outlines/[slug]-outline.md` or to a user-specified path.
-Confirm the outline is ready for `/blog write` to consume.
+Confirm the outline is ready for `/blog:write` to consume.
 
 If the `outlines/` directory does not exist, create it.
 

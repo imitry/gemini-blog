@@ -1,7 +1,7 @@
 description = "Develop a full blog strategy with topic clusters, AI citation surface plan, and 90-day roadmap"
 
 prompt = """
-Read the file skills/blog-strategy/GEMINI.md and develop a comprehensive blog strategy for:
+Read the file ${extensionPath}/skills/blog-strategy/GEMINI.md and develop a comprehensive blog strategy for:
 
 {{args}}
 

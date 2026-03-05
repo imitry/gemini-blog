@@ -9,12 +9,47 @@ authority (Google) and maintaining citation freshness (AI platforms).
 
 ### Step 1: Understand the Blog
 
-Gather context:
-1. **Niche/industry** -- What is the blog about?
-2. **Existing content** -- Scan for existing blog posts (Glob for *.md, *.mdx, *.html)
-3. **Publishing cadence** -- How often can they publish? (default: 2x/week)
-4. **Timeframe** -- Monthly or quarterly calendar?
-5. **Business goals** -- What should the blog drive? (traffic, leads, authority)
+Use the `ask_user` tool to gather required details from the user!
+You MUST invoke the `ask_user` tool using the following JSON structure:
+
+```json
+{
+  "questions": [
+    {
+      "header": "Niche",
+      "question": "What is the blog about (industry/niche)?",
+      "type": "text"
+    },
+    {
+      "header": "Publishing",
+      "question": "How often can you publish?",
+      "type": "choice",
+      "options": [
+        { "label": "1/week", "description": "1 post per week" },
+        { "label": "2/week", "description": "2 posts per week (default)" },
+        { "label": "3/week", "description": "3 posts per week" },
+        { "label": "4+/week", "description": "4 or more posts per week" }
+      ]
+    },
+    {
+      "header": "Timeframe",
+      "question": "Do you need a monthly or quarterly calendar?",
+      "type": "choice",
+      "options": [
+        { "label": "Monthly", "description": "1-month editorial plan" },
+        { "label": "Quarterly", "description": "3-month editorial plan" }
+      ]
+    },
+    {
+      "header": "Goals",
+      "question": "What should the blog drive (traffic, leads, authority)?",
+      "type": "text"
+    }
+  ]
+}
+```
+
+Wait for the tool execution response before proceeding. If the user provided all required details in their initial prompt, skip this step. Do not forget to scan for existing blog posts (Glob for *.md, *.mdx, *.html) as well.
 
 ### Step 2: Topic Cluster Design
 
@@ -264,15 +299,15 @@ Automation recommendations:
 - Prioritize refresh order by traffic/importance
 - After each refresh, update the `lastUpdated` frontmatter field
 - Track refresh history to measure freshness impact on rankings/citations
-- Suggest running `/blog rewrite` for each scheduled refresh
+- Suggest running `/blog:rewrite` for each scheduled refresh
 
 ### Step 6: Save & Next Steps
 
 Save the calendar and suggest:
-1. Start with `/blog brief <first-topic>` to create the first content brief
-2. Use `/blog write` to generate articles from briefs
-3. Use `/blog rewrite` for freshness updates on existing content
-4. Re-run `/blog calendar` next month/quarter for the next plan
+1. Start with `/blog:brief <first-topic>` to create the first content brief
+2. Use `/blog:write` to generate articles from briefs
+3. Use `/blog:rewrite` for freshness updates on existing content
+4. Re-run `/blog:calendar` next month/quarter for the next plan
 5. Review the Content Decay Report weekly and address Critical items first
 6. Track Topic Cluster Progress monthly to ensure clusters reach completion
 

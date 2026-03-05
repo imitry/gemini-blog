@@ -1,7 +1,7 @@
 description = "Analyze and score a blog post on a 0-100 scale with AI content detection"
 
 prompt = """
-Read the file skills/blog-analyze/GEMINI.md and follow its scoring process to audit this blog post:
+Read the file ${extensionPath}/skills/blog-analyze/GEMINI.md and follow its scoring process to audit this blog post:
 
 {{args}}
 
