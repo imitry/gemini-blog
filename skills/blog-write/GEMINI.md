@@ -31,8 +31,15 @@ follows the 6 pillars of dual optimization (Google rankings + AI citations).
     },
     {
       "header": "Audience",
-      "question": "Who is the target audience (who is this for)?",
-      "type": "text"
+      "question": "Who is the target audience?",
+      "type": "choice",
+      "allowOther": true,
+      "options": [
+        { "label": "General readers", "description": "Broad audience, no specialized knowledge assumed" },
+        { "label": "Business professionals", "description": "Managers, executives, decision-makers" },
+        { "label": "Developers/technical", "description": "Software engineers, technical practitioners" },
+        { "label": "Marketers", "description": "Marketing professionals, content creators, SEO specialists" }
+      ]
     },
     {
       "header": "Intent",
@@ -41,19 +48,23 @@ follows the 6 pillars of dual optimization (Google rankings + AI citations).
     },
     {
       "header": "Length",
-      "question": "What is the desired word count?",
-      "type": "text",
-      "placeholder": "e.g., 2,000-2,500 words"
+      "question": "What word count are you targeting?",
+      "type": "choice",
+      "allowOther": true,
+      "options": [
+        { "label": "~2,000 words (Recommended)", "description": "Standard length, good for most topics" },
+        { "label": "~2,500 words", "description": "More comprehensive coverage" },
+        { "label": "~3,000+ words", "description": "Pillar/ultimate guide depth" }
+      ]
     },
     {
-      "header": "Platform",
-      "question": "What is the platform/format?",
+      "header": "Format",
+      "question": "What output format should the article use?",
       "type": "choice",
       "options": [
-        { "label": "MDX", "description": "MDX file format" },
-        { "label": "Markdown", "description": "Standard markdown" },
-        { "label": "HTML", "description": "Raw HTML" },
-        { "label": "Auto-detect", "description": "Infer from project files" }
+        { "label": "MDX", "description": "MDX with JSX components (Next.js, Gatsby)" },
+        { "label": "Markdown", "description": "Standard markdown (.md)" },
+        { "label": "HTML", "description": "Plain HTML markup" }
       ]
     }
   ]
