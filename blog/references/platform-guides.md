@@ -949,28 +949,28 @@ exports.createPages = async ({ graphql, actions }) => {
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "&#64;context": "https://schema.org",
+    "&#64;type": "BlogPosting",
     "headline": "How Does AI Search Impact Organic Traffic in 2026?",
     "description": "Organic CTR declined 61% with AI Overviews.",
     "image": "https://cdn.pixabay.com/photo/.../cover.jpg",
     "datePublished": "2026-02-18",
     "dateModified": "2026-02-18",
     "author": {
-      "@type": "Person",
+      "&#64;type": "Person",
       "name": "Author Name",
       "url": "https://yourblog.com/about"
     },
     "publisher": {
-      "@type": "Organization",
+      "&#64;type": "Organization",
       "name": "Blog Name",
       "logo": {
-        "@type": "ImageObject",
+        "&#64;type": "ImageObject",
         "url": "https://yourblog.com/logo.png"
       }
     },
     "mainEntityOfPage": {
-      "@type": "WebPage",
+      "&#64;type": "WebPage",
       "@id": "https://yourblog.com/ai-search-organic-traffic"
     }
   }
@@ -1048,12 +1048,12 @@ Place in `<head>` for BlogPosting:
 ```html
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "&#64;context": "https://schema.org",
+  "&#64;type": "BlogPosting",
   "headline": "Title",
   "datePublished": "2026-02-18",
   "dateModified": "2026-02-18",
-  "author": { "@type": "Person", "name": "Author" }
+  "author": { "&#64;type": "Person", "name": "Author" }
 }
 </script>
 ```
@@ -1062,14 +1062,14 @@ Place in `<head>` for FAQPage:
 ```html
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
+  "&#64;context": "https://schema.org",
+  "&#64;type": "FAQPage",
   "mainEntity": [
     {
-      "@type": "Question",
+      "&#64;type": "Question",
       "name": "What is the question?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "&#64;type": "Answer",
         "text": "The 40-60 word answer with a specific statistic and source."
       }
     }

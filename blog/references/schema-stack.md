@@ -18,8 +18,8 @@ metadata in a single structured entity.
 
 | Property | Required | Type | Description |
 |----------|----------|------|-------------|
-| `@context` | Yes | URL | Always `"https://schema.org"` |
-| `@type` | Yes | String | Always `"BlogPosting"` |
+| `&#64;context` | Yes | URL | Always `"https://schema.org"` |
+| `&#64;type` | Yes | String | Always `"BlogPosting"` |
 | `@id` | Yes | URI | Stable identifier: `{siteUrl}/blog/{slug}#article` |
 | `headline` | Yes | String | Post title, max 110 characters |
 | `description` | Yes | String | Meta description, 150-160 characters |
@@ -41,7 +41,7 @@ metadata in a single structured entity.
 
 ```json
 {
-  "@type": "BlogPosting",
+  "&#64;type": "BlogPosting",
   "@id": "https://example.com/blog/technical-seo-guide#article",
   "headline": "Complete Guide to Technical SEO in 2026",
   "description": "Technical SEO has evolved beyond Core Web Vitals. 72% of top-ranking pages now use structured data. Here's how to optimize your site for both traditional search and AI systems.",
@@ -54,14 +54,14 @@ metadata in a single structured entity.
     "@id": "https://example.com#organization"
   },
   "image": {
-    "@type": "ImageObject",
+    "&#64;type": "ImageObject",
     "url": "https://example.com/images/blog/technical-seo-guide.jpg",
     "width": 1200,
     "height": 630,
     "caption": "Technical SEO optimization workflow diagram"
   },
   "mainEntityOfPage": {
-    "@type": "WebPage",
+    "&#64;type": "WebPage",
     "@id": "https://example.com/blog/technical-seo-guide"
   },
   "wordCount": 3200,
@@ -81,7 +81,7 @@ Used for author attribution in BlogPosting and on dedicated author pages.
 
 | Property | Required | Type | Description |
 |----------|----------|------|-------------|
-| `@type` | Yes | String | Always `"Person"` |
+| `&#64;type` | Yes | String | Always `"Person"` |
 | `@id` | Yes | URI | Stable: `{siteUrl}/author/{slug}#person` |
 | `name` | Yes | String | Full name |
 | `jobTitle` | Yes | String | Current professional title |
@@ -97,7 +97,7 @@ Used for author attribution in BlogPosting and on dedicated author pages.
 
 ```json
 {
-  "@type": "Person",
+  "&#64;type": "Person",
   "@id": "https://example.com/author/sarah-chen#person",
   "name": "Sarah Chen",
   "jobTitle": "Content Strategist",
@@ -110,12 +110,12 @@ Used for author attribution in BlogPosting and on dedicated author pages.
     "https://sarahchen.com"
   ],
   "worksFor": {
-    "@type": "Organization",
+    "&#64;type": "Organization",
     "name": "Example Corp",
     "url": "https://example.com"
   },
   "alumniOf": {
-    "@type": "CollegeOrUniversity",
+    "&#64;type": "CollegeOrUniversity",
     "name": "UC Berkeley"
   },
   "knowsAbout": ["SEO", "Content Strategy", "B2B SaaS Marketing"]
@@ -133,7 +133,7 @@ Represents the publishing entity. Referenced by every BlogPosting via the
 
 | Property | Required | Type | Description |
 |----------|----------|------|-------------|
-| `@type` | Yes | String | `"Organization"` or `"LocalBusiness"` |
+| `&#64;type` | Yes | String | `"Organization"` or `"LocalBusiness"` |
 | `@id` | Yes | URI | Stable: `{siteUrl}#organization` |
 | `name` | Yes | String | Company/brand name |
 | `url` | Yes | URL | Homepage URL |
@@ -148,12 +148,12 @@ Represents the publishing entity. Referenced by every BlogPosting via the
 
 ```json
 {
-  "@type": "Organization",
+  "&#64;type": "Organization",
   "@id": "https://example.com#organization",
   "name": "Example Corp",
   "url": "https://example.com",
   "logo": {
-    "@type": "ImageObject",
+    "&#64;type": "ImageObject",
     "url": "https://example.com/images/logo.png",
     "width": 300,
     "height": 60
@@ -164,7 +164,7 @@ Represents the publishing entity. Referenced by every BlogPosting via the
     "https://github.com/examplecorp"
   ],
   "contactPoint": {
-    "@type": "ContactPoint",
+    "&#64;type": "ContactPoint",
     "contactType": "customer support",
     "email": "support@example.com",
     "url": "https://example.com/contact"
@@ -181,34 +181,34 @@ how pages appear in search results and helps crawlers understand site structure.
 
 ### ItemListElement Pattern
 
-Each breadcrumb item requires `@type`, `position`, `name`, and `item` (URL).
+Each breadcrumb item requires `&#64;type`, `position`, `name`, and `item` (URL).
 
 ### Complete BreadcrumbList Example
 
 ```json
 {
-  "@type": "BreadcrumbList",
+  "&#64;type": "BreadcrumbList",
   "itemListElement": [
     {
-      "@type": "ListItem",
+      "&#64;type": "ListItem",
       "position": 1,
       "name": "Home",
       "item": "https://example.com"
     },
     {
-      "@type": "ListItem",
+      "&#64;type": "ListItem",
       "position": 2,
       "name": "Blog",
       "item": "https://example.com/blog"
     },
     {
-      "@type": "ListItem",
+      "&#64;type": "ListItem",
       "position": 3,
       "name": "SEO",
       "item": "https://example.com/blog/category/seo"
     },
     {
-      "@type": "ListItem",
+      "&#64;type": "ListItem",
       "position": 4,
       "name": "Complete Guide to Technical SEO in 2026",
       "item": "https://example.com/blog/technical-seo-guide"
@@ -249,29 +249,29 @@ FAQPage
 
 ```json
 {
-  "@type": "FAQPage",
+  "&#64;type": "FAQPage",
   "mainEntity": [
     {
-      "@type": "Question",
+      "&#64;type": "Question",
       "name": "How does technical SEO affect AI visibility?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "&#64;type": "Answer",
         "text": "Technical SEO directly determines whether AI crawlers can access and extract your content. Since AI crawlers do not execute JavaScript, server-side rendered HTML with structured data markup is essential. Sites with proper technical SEO see up to 340% more AI citations."
       }
     },
     {
-      "@type": "Question",
+      "&#64;type": "Question",
       "name": "What is the most important schema type for blog posts?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "&#64;type": "Answer",
         "text": "BlogPosting schema is the foundation for blog content. It provides structured metadata about the article including author, dates, and content classification. Combined with Person and Organization schemas, it creates a complete entity graph that search engines and AI systems use to evaluate content authority."
       }
     },
     {
-      "@type": "Question",
+      "&#64;type": "Question",
       "name": "Do AI search engines use schema markup?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "&#64;type": "Answer",
         "text": "Yes. AI search engines like ChatGPT Search, Perplexity, and Google AI Overviews use schema markup to identify authoritative content. Pages with 3 or more schema types have approximately 13% higher likelihood of being cited in AI-generated responses compared to pages without structured data."
       }
     }
@@ -297,7 +297,7 @@ Used within BlogPosting for featured images and inline article images.
 
 | Property | Required | Type | Description |
 |----------|----------|------|-------------|
-| `@type` | Yes | String | `"ImageObject"` |
+| `&#64;type` | Yes | String | `"ImageObject"` |
 | `url` | Yes | URL | Full image URL |
 | `width` | Yes | Integer | Width in pixels |
 | `height` | Yes | Integer | Height in pixels |
@@ -310,14 +310,14 @@ Used within BlogPosting for featured images and inline article images.
 
 ```json
 {
-  "@type": "ImageObject",
+  "&#64;type": "ImageObject",
   "url": "https://example.com/images/blog/seo-workflow-diagram.jpg",
   "width": 1200,
   "height": 630,
   "caption": "Technical SEO audit workflow showing the 7-step process from crawl analysis to implementation",
   "creditText": "Example Corp Design Team",
   "copyrightHolder": {
-    "@type": "Organization",
+    "&#64;type": "Organization",
     "name": "Example Corp"
   }
 }
@@ -339,9 +339,9 @@ Use `cssSelector` (preferred) or `xPath` to identify speakable content sections.
 
 ```json
 {
-  "@type": "WebPage",
+  "&#64;type": "WebPage",
   "speakable": {
-    "@type": "SpeakableSpecification",
+    "&#64;type": "SpeakableSpecification",
     "cssSelector": [
       ".article-summary",
       ".faq-answer",
@@ -356,9 +356,9 @@ Use `cssSelector` (preferred) or `xPath` to identify speakable content sections.
 
 ```json
 {
-  "@type": "WebPage",
+  "&#64;type": "WebPage",
   "speakable": {
-    "@type": "SpeakableSpecification",
+    "&#64;type": "SpeakableSpecification",
     "xPath": [
       "/html/head/title",
       "/html/body//article/p[1]",
@@ -457,15 +457,15 @@ multiple schema types.
 
 ```json
 {
-  "@context": "https://schema.org",
+  "&#64;context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "&#64;type": "Organization",
       "@id": "https://example.com#organization",
       "name": "Example Corp",
       "url": "https://example.com",
       "logo": {
-        "@type": "ImageObject",
+        "&#64;type": "ImageObject",
         "url": "https://example.com/images/logo.png",
         "width": 300,
         "height": 60
@@ -476,7 +476,7 @@ multiple schema types.
       ]
     },
     {
-      "@type": "Person",
+      "&#64;type": "Person",
       "@id": "https://example.com/author/sarah-chen#person",
       "name": "Sarah Chen",
       "jobTitle": "Content Strategist",
@@ -491,7 +491,7 @@ multiple schema types.
       }
     },
     {
-      "@type": "BlogPosting",
+      "&#64;type": "BlogPosting",
       "@id": "https://example.com/blog/technical-seo-guide#article",
       "headline": "Complete Guide to Technical SEO in 2026",
       "description": "Technical SEO has evolved beyond Core Web Vitals. 72% of top-ranking pages now use structured data. Here's how to optimize your site for both traditional search and AI systems.",
@@ -504,14 +504,14 @@ multiple schema types.
         "@id": "https://example.com#organization"
       },
       "image": {
-        "@type": "ImageObject",
+        "&#64;type": "ImageObject",
         "url": "https://example.com/images/blog/technical-seo-guide.jpg",
         "width": 1200,
         "height": 630,
         "caption": "Technical SEO optimization workflow diagram"
       },
       "mainEntityOfPage": {
-        "@type": "WebPage",
+        "&#64;type": "WebPage",
         "@id": "https://example.com/blog/technical-seo-guide"
       },
       "wordCount": 3200,
@@ -520,23 +520,23 @@ multiple schema types.
       "inLanguage": "en-US"
     },
     {
-      "@type": "BreadcrumbList",
+      "&#64;type": "BreadcrumbList",
       "@id": "https://example.com/blog/technical-seo-guide#breadcrumb",
       "itemListElement": [
         {
-          "@type": "ListItem",
+          "&#64;type": "ListItem",
           "position": 1,
           "name": "Home",
           "item": "https://example.com"
         },
         {
-          "@type": "ListItem",
+          "&#64;type": "ListItem",
           "position": 2,
           "name": "Blog",
           "item": "https://example.com/blog"
         },
         {
-          "@type": "ListItem",
+          "&#64;type": "ListItem",
           "position": 3,
           "name": "Complete Guide to Technical SEO in 2026",
           "item": "https://example.com/blog/technical-seo-guide"
@@ -544,22 +544,22 @@ multiple schema types.
       ]
     },
     {
-      "@type": "FAQPage",
+      "&#64;type": "FAQPage",
       "@id": "https://example.com/blog/technical-seo-guide#faq",
       "mainEntity": [
         {
-          "@type": "Question",
+          "&#64;type": "Question",
           "name": "How does technical SEO affect AI visibility?",
           "acceptedAnswer": {
-            "@type": "Answer",
+            "&#64;type": "Answer",
             "text": "Technical SEO directly determines whether AI crawlers can access and extract your content. Server-side rendered HTML with structured data is essential since AI crawlers do not execute JavaScript."
           }
         },
         {
-          "@type": "Question",
+          "&#64;type": "Question",
           "name": "What schema types should every blog post have?",
           "acceptedAnswer": {
-            "@type": "Answer",
+            "&#64;type": "Answer",
             "text": "Every blog post should have BlogPosting, Person (author), Organization (publisher), and BreadcrumbList schemas at minimum. Adding FAQPage as a fifth type increases AI citation likelihood by approximately 13%."
           }
         }
@@ -577,7 +577,7 @@ multiple schema types.
 |-------|------|------|
 | JSON-LD in HTML source (not JS-injected) | In `<head>` or `<body>` tag | Loaded via JavaScript |
 | Valid JSON syntax | Passes JSON.parse() | Syntax errors |
-| @context is `https://schema.org` | Exact match | Missing or HTTP |
+| &#64;context is `https://schema.org` | Exact match | Missing or HTTP |
 | @id uses stable fragment pattern | Consistent across builds | Random or missing |
 | dateModified matches actual update | Within 24 hours of last edit | Stale or fabricated |
 | Author @id matches author page | Same URI used everywhere | Inconsistent references |

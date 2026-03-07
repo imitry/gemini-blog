@@ -336,14 +336,14 @@ This template requires FAQPage schema markup. When generating the final HTML:
 
 ```json
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
+  "&#64;context": "https://schema.org",
+  "&#64;type": "FAQPage",
   "mainEntity": [
     {
-      "@type": "Question",
+      "&#64;type": "Question",
       "name": "[Question text]",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "&#64;type": "Answer",
         "text": "[Answer text ------ use the ANSWER-FIRST sentence + supporting detail]"
       }
     }
