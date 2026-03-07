@@ -81,10 +81,10 @@ Every named author must have a dedicated author page at `/author/{name-slug}`.
 
 ```json
 {
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
+  "&#64;context": "https://schema.org",
+  "&#64;type": "ProfilePage",
   "mainEntity": {
-    "@type": "Person",
+    "&#64;type": "Person",
     "@id": "https://example.com/author/sarah-chen#person",
     "name": "Sarah Chen",
     "jobTitle": "Content Strategist",
@@ -97,11 +97,11 @@ Every named author must have a dedicated author page at `/author/{name-slug}`.
       "https://sarahchen.com"
     ],
     "worksFor": {
-      "@type": "Organization",
+      "&#64;type": "Organization",
       "name": "Example Corp"
     },
     "alumniOf": {
-      "@type": "CollegeOrUniversity",
+      "&#64;type": "CollegeOrUniversity",
       "name": "UC Berkeley"
     }
   }
@@ -116,15 +116,15 @@ The Person schema embedded in BlogPosting and on author pages.
 
 | Property | Required | Description | Example |
 |----------|----------|-------------|---------|
-| `@type` | Yes | Always "Person" | `"Person"` |
+| `&#64;type` | Yes | Always "Person" | `"Person"` |
 | `@id` | Yes | Stable URI with fragment | `"https://example.com/author/sarah-chen#person"` |
 | `name` | Yes | Full name | `"Sarah Chen"` |
 | `jobTitle` | Yes | Current role | `"Content Strategist"` |
 | `url` | Yes | Author page URL | `"https://example.com/author/sarah-chen"` |
 | `image` | Yes | Headshot URL | `"https://example.com/images/authors/sarah-chen.jpg"` |
 | `sameAs` | Yes | Array of social/profile URLs | `["https://linkedin.com/in/sarahchen"]` |
-| `worksFor` | Recommended | Organization entity | `{"@type": "Organization", "name": "Example Corp"}` |
-| `alumniOf` | Optional | Educational institution | `{"@type": "CollegeOrUniversity", "name": "UC Berkeley"}` |
+| `worksFor` | Recommended | Organization entity | `{"&#64;type": "Organization", "name": "Example Corp"}` |
+| `alumniOf` | Optional | Educational institution | `{"&#64;type": "CollegeOrUniversity", "name": "UC Berkeley"}` |
 | `description` | Recommended | Brief professional summary | `"B2B SaaS content strategist..."` |
 | `knowsAbout` | Optional | Array of expertise topics | `["SEO", "content strategy", "B2B marketing"]` |
 
@@ -132,7 +132,7 @@ The Person schema embedded in BlogPosting and on author pages.
 
 ```json
 {
-  "@type": "Person",
+  "&#64;type": "Person",
   "@id": "https://example.com/author/sarah-chen#person",
   "name": "Sarah Chen",
   "jobTitle": "Content Strategist",
@@ -145,12 +145,12 @@ The Person schema embedded in BlogPosting and on author pages.
     "https://sarahchen.com"
   ],
   "worksFor": {
-    "@type": "Organization",
+    "&#64;type": "Organization",
     "name": "Example Corp",
     "url": "https://example.com"
   },
   "alumniOf": {
-    "@type": "CollegeOrUniversity",
+    "&#64;type": "CollegeOrUniversity",
     "name": "UC Berkeley"
   },
   "knowsAbout": ["SEO", "Content Strategy", "B2B SaaS Marketing"]

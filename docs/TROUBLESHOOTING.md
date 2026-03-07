@@ -268,10 +268,10 @@ even though the post has JSON-LD markup.
 - https://search.google.com/test/rich-results
 
 Common issues:
-- Missing `@context` or `@type` fields
+- Missing `&#64;context` or `&#64;type` fields
 - `dateModified` not matching `lastUpdated` in frontmatter
 - Image URL not accessible (returns 404)
-- Author `@type` should be `Person`, not `Organization`
+- Author `&#64;type` should be `Person`, not `Organization`
 
 ---
 
